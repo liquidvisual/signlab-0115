@@ -1,0 +1,26 @@
+- title: Home
+  url: /
+
+- title: About
+  url: /about/
+
+- title: Signage
+  url: /signage/
+  include_children_in_nav: true
+  children:
+    - title: Service One
+      url: /services/service-one/
+    - title: Service Two
+      url: /services/service-two/
+
+- title: Banners
+  url: /banners/
+
+- title: Vehicles
+  url: /portfolio/
+
+- title: Showcase
+  url: /blog/
+
+- title: Contact
+  url: /contact/

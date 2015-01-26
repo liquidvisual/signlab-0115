@@ -1,0 +1,124 @@
+/*
+    GALLERY.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$horizontal-slider-button-height: 50px;
+$slider-triangle-size: 24px;
+
+//-----------------------------------------------------------------
+// Image Gallery (Lightbox)
+//-----------------------------------------------------------------
+
+.gallery-module {
+	@include block-grid($per-row: 2, $spacing: 6px, $base-style: true);
+
+	@media #{$medium-up} {
+	    @include block-grid($per-row: 4, $spacing: 6px, $base-style: true);
+	}
+
+	li {
+		margin-bottom: 0;
+	}
+}
+
+//-----------------------------------------------------------------
+// Horizontal Slider
+//-----------------------------------------------------------------
+
+.horizontal-slider-module {
+	margin-left: 0;
+
+	li {
+		text-align: center;
+
+		img {
+			display: inline-block;
+		}
+	}
+
+	.slick-prev:before,
+	.slick-next:before {
+		font-family: "FontAwesome";
+		font-size: rem-calc(50);
+		position: relative;
+		top: -15px;
+	}
+
+	.slick-prev:before {
+		content: "\f104"
+	}
+
+	.slick-next:before {
+		content: "\f105"
+	}
+
+	// .slick-dots button {
+	// 	background: white;
+	// 	border-radius: 100%;
+	// 	height: 10px;
+	// 	width: 10px;
+	// 	text-align: center;
+	// }
+}
+
+//-----------------------------------------------------------------
+// Gallery Slider
+//-----------------------------------------------------------------
+
+.js-gallery-slider .slider-nav {
+	margin: 0;
+}
+
+//=========================================
+// Buttons
+//=========================================
+
+.js-gallery-slider li .button {
+	position: relative;
+	background: #E5E5E5;
+	display: block;
+	margin-right: rem-calc(25);
+	padding: rem-calc(0 20);
+	line-height: $horizontal-slider-button-height;
+	height: $horizontal-slider-button-height;
+	border: 1px solid #9BA1AA;
+	color: $secondary-color;
+	text-transform: uppercase;
+	font-size: rem-calc(15);
+	font-weight: bold;
+	text-align: left;
+	border-radius: $global-radius 0 0 $global-radius;
+
+	width: 250px;
+	white-space: nowrap;
+	// overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.js-gallery-slider .active .button {
+	background: white;
+}
+
+.js-gallery-slider .active .button .arrow-box {
+	border-left-color: white;
+}
+
+.arrow-box {
+	@include transition();
+	position: absolute;
+	top: 0;
+	right: -$slider-triangle-size*2;
+
+	border-top: $slider-triangle-size solid transparent;
+	border-right: $slider-triangle-size solid transparent;
+	border-bottom: $slider-triangle-size solid transparent;
+	border-left: $slider-triangle-size solid #E5E5E5;
+	// background: rgba(0,0,0,.2);
+	// margin: 40px;
+}

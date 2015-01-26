@@ -1,0 +1,68 @@
+/*
+    FORMS.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Forms
+//-----------------------------------------------------------------
+
+.lv-super input[type=text],
+.lv-super input[type=email],
+.lv-super input[type=file],
+.lv-super textarea {
+	padding: 20px;
+	height: rem-calc(70);
+	margin-bottom: rem-calc(30);
+}
+
+.lv-super textarea {
+	height: rem-calc(134);
+}
+
+//=========================================
+// Abide Errors
+//=========================================
+
+.lv-super .error {
+	input, textarea {
+		margin-bottom: 0;
+	}
+	small.error {
+		margin-bottom: rem-calc(30);
+	}
+}
+
+[aria-invalid="false"] {
+	margin-bottom: 0;
+}
+
+//=========================================
+// File Upload
+//=========================================
+
+.lv-super input[type=file] {
+	border: 2px solid #DEDEDE;
+	height: auto;
+}
+
+.lt-ie10 input[type=file] {
+	padding: 0;
+}
+
+.input-newsletter {
+	margin-bottom: rem-calc(30);
+
+	input {
+		margin-bottom: 0;
+		padding: 0;
+	}
+}
+
+//=========================================
+//
+//=========================================

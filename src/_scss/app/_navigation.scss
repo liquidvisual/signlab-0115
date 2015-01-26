@@ -1,0 +1,123 @@
+/*
+    NAVIGATION.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Navigation
+//-----------------------------------------------------------------
+
+.navigation {
+	// position: absolute;
+	// top: 0;
+	// right: 0;
+	// left: 0;
+}
+
+//-----------------------------------------------------------------
+// Topbar
+//-----------------------------------------------------------------
+
+.topbar {
+	position: absolute;
+	// top: -100px;
+	top: -33px;
+	left: 270px;
+	// top: 0;
+	width: 200%; // clever trick
+	margin: 0; // failsafe
+}
+
+.topbar ul {
+	list-style: none;
+}
+
+.topbar > ul {
+	// display: table;
+	background: white;
+	// float: right;
+
+	// pushing against logo
+	// padding-left: 110px;
+}
+
+.topbar > ul > li {
+	position: relative;
+	display: table-cell;
+}
+
+.topbar > ul > li > a {
+	@include transition();
+	display: block;
+	line-height: rem-calc(100);
+	padding: rem-calc(0 20);
+	// background: white;
+}
+
+.no-touch .topbar a:hover,
+.topbar li.active a {
+	background: $primary-color;
+	color: white;
+}
+
+//-----------------------------------------------------------------
+// Navigation
+//-----------------------------------------------------------------
+
+.topbar a {
+	color: $secondary-color;
+	text-transform: uppercase;
+	font-size: rem-calc(14);
+}
+
+//=========================================
+// Nested Dropdowns
+//=========================================
+
+.topbar .has-dropdown:hover > a {
+	background: $primary-color;
+	color: white;
+}
+
+.topbar .dropdown {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: rem-calc(190);
+	margin: 0;
+	opacity: 0;
+	height: 0; // so hit areas aren't triggered
+	overflow: hidden; // so hit areas aren't triggered
+
+	li {
+		margin: 0;
+	}
+}
+
+// Dropdown Color is here
+.topbar .dropdown a {
+	display: block;
+	padding: rem-calc(10 15);
+	background: #084A86; //darken($primary-color, 10%);
+	color: white;
+
+	&:hover {
+		background: darken($primary-color, 15%);
+		color: white;
+	}
+}
+
+/* UX decision, dropdowns are fiddly on tablets */
+.no-touch .topbar .has-dropdown:hover > .dropdown {
+	opacity: 1;
+	height: auto;
+	overflow: visible;
+}
+
+
+
+

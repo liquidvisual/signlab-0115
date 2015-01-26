@@ -1,0 +1,44 @@
+/*
+    HERO.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Hero
+//-----------------------------------------------------------------
+
+.lv-hero .secondary-button {
+	background: #F48734;
+}
+
+.lv-hero-caption {
+	text-transform: uppercase;
+}
+
+//=========================================
+//
+//=========================================
+
+.lv-hero-module.promo-style {
+	.lv-hero {
+		height: 900px;
+	}
+
+	.lv-hero-caption {
+		padding: 30px;
+		margin: 0;
+		background: rgba($primary-color, .9);
+		height: 900px;
+		line-height: 900px;
+		// width: 40%;
+		float: right;
+
+		@media #{$medium-up} {
+		    width: 40%;
+		}
+	}
+}

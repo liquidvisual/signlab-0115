@@ -1,0 +1,38 @@
+{% assign settings = site.data.settings %}
+
+<!-- Footer Top -->
+<section class="footer-top section">
+	<div class="row outer-row">
+		<div class="columns">
+
+			<div class="headline">
+				<h2><i class="fa fa-phone"></i> {{ settings.phone }}</h2>
+				<h3 class="subheader">{{ settings.address }}</h3>
+			</div>
+
+			<h3>Feel free to drop us a message..</h3>
+			<br>
+			{% include snippets/simple_form.html %}
+
+		</div> <!-- .columns -->
+	</div> <!-- .row -->
+</section>
+
+<!-- Footer Middle -->
+<section class="footer-middle">
+	{% include snippets/google_map.html %}
+</section>
+
+<!-- Footer Bottom -->
+<section class="footer-bottom">
+	<div class="row">
+		<div class="columns">
+			<ul class="social-networks lv-inline-list text-center">
+				<li><a href="{{ settings.facebook }}"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="{{ settings.google-plus }}"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="{{ settings.youtube }}"><i class="fa fa-youtube"></i></a></li>
+			</ul>
+			<p>&copy; 2015 Signlab. All Rights Reserved.</p>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,35 @@
+/*
+    FOOTER.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// Footer
+//-----------------------------------------------------------------
+
+.footer-bottom {
+	background: $primary-color;
+	color: white;
+	text-align: center;
+	padding: rem-calc(60 0 40 0);
+}
+
+.footer-middle {
+	height: rem-calc(200);
+
+	@media #{$medium-up} {
+	    height: rem-calc(390);
+	}
+}
+
+//=========================================
+// Special
+//=========================================
+
+// .footer .headline {
+// 	// margin-bottom: rem-calc(30);
+// }

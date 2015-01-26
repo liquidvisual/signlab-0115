@@ -1,0 +1,84 @@
+/*
+    SECTIONS.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.section {
+	padding: rem-calc(70 0);
+}
+
+//=========================================
+//
+//=========================================
+
+.section .headline {
+	position: relative;
+	padding-bottom: rem-calc(20);
+	border-bottom: 2px solid $secondary-color;
+	margin-bottom: rem-calc(70);
+
+	h1, h2, h3, h4, h5, h6 {
+		display: inline-block;
+
+		a {
+			color: $header-font-color; // prevent colored tel anchors
+		}
+	}
+
+	h3 {
+		// font-size: rem-calc(30);
+	}
+
+	h2 {
+		margin-right: rem-calc(20);
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			width: rem-calc(80);
+			height: rem-calc(5);
+			background: $primary-color;
+		}
+	}
+}
+
+//=========================================
+// Section Dark
+//=========================================
+
+.section-dark {
+	background: $primary-color;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: white;
+	}
+
+	h3, a {
+		color: lighten($primary-color, 20%);
+	}
+
+	.headline {
+		border-color: lighten($primary-color, 15%);
+
+		h2:after {
+			background: white;
+		}
+	}
+
+	.button {
+		background: white;
+		color: $primary-color;
+	}
+
+	color: white;
+}

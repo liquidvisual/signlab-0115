@@ -1,0 +1,85 @@
+---
+layout: master
+---
+
+{% assign settings = site.data.settings %}
+{{ page.banner_image | prepend: site.assets }}
+
+
+<div class="homepage">
+
+	{% include hero.html %}
+
+	{% include content_section.html theme="normal" %}
+
+	<!-- GALLERY -->
+	<section class="section section-dark">
+		<div class="row outer-row">
+			<div class="columns">
+
+				<div class="headline">
+					<h2>Signage</h2>
+					<h3 class="subheader">1440dpi Print</h3>
+				</div>
+
+				{% include gallery_slider.html %}
+
+			</div> <!-- .columns -->
+		</div> <!-- .row -->
+	</section> <!-- .section -->
+
+	<!-- GALLERY SECTION -->
+	<section class="section">
+		<div class="row outer-row">
+			<div class="columns">
+
+				<div class="headline">
+					<h2>Van Wrap Gallery</h2>
+					<h3 class="subheader">36 Month Warranty</h3>
+				</div>
+
+				<div class="row">
+					<div class="columns">
+						<p>More Van Wraps completed here in Adelaide to view on our <a href="{{ settings.facebook }}">Facebook</a> or <a href="{{ settings.google_plus }}">Google Plus pages.</a></p>
+
+						<br>
+
+						<ul class="gallery-module">
+							{% for i in (1..8) %}
+								<li><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
+							{% endfor %}
+						</ul>
+
+					</div>
+				</div> <!-- .row -->
+
+			</div> <!-- .columns -->
+		</div> <!-- .row -->
+	</section> <!-- .section -->
+
+	<!-- CLIENTS -->
+	<section class="section section-dark">
+		<div class="row outer-row">
+			<div class="columns">
+
+				<div class="headline">
+					<h2>Our Clients</h2>
+					<h3 class="subheader">and Friends</h3>
+				</div>
+
+				<div class="row">
+					<div class="columns">
+						<!-- Slider Module Horizontal -->
+						<ul class="horizontal-slider-module">
+							{% for i in (1..4) %}
+								<li><a href="#"><img src="/img/content/client-{{forloop.index}}.png" alt="..."></a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+
+			</div> <!-- .columns -->
+		</div> <!-- .row -->
+	</section> <!-- .section -->
+
+</div> <!-- .homepage -->

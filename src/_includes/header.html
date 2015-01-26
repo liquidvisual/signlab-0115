@@ -1,0 +1,25 @@
+{% comment %}
+    IGNORE THIS COMMENT: Interchange code reference for dev self:
+    <img width="200" data-interchange="[/ImageGen.ashx?width=200&image=@logo.Url, (default)], [@logo.Url, (retina)]" alt="@logo.Name">
+{% endcomment %}
+
+{% assign settings = site.data.settings %}
+
+<div class="row outer-row lv-vertical-center">
+	<div class="columns">
+
+		<!-- Logo -->
+    	<a class="logo" href="/" title="{{ settings.seo_title }}" itemprop="url">
+        	<img src="{{ settings.logo }}" alt="{{ settings.company_title }}" itemprop="logo">
+    	</a>
+
+    	<!-- Hamburger -->
+    	<div class="header-mobile-menu hide-for-xlarge-up">
+    	    <a href="#"> <span class="hamburger"><span class="hamburger-icon"></span></span></a>
+    	</div>
+
+    </div>
+</div>
+
+<!-- Header strip -->
+<div class="header-strip-left"></div>

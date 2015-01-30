@@ -3,8 +3,6 @@ layout: master
 ---
 
 {% assign settings = site.data.settings %}
-{{ page.banner_image | prepend: site.assets }}
-
 
 <div class="homepage">
 
@@ -71,8 +69,8 @@ layout: master
 					<div class="columns">
 						<!-- Slider Module Horizontal -->
 						<ul class="horizontal-slider-module">
-							{% for i in (1..4) %}
-								<li><a href="#"><img src="/img/content/client-{{forloop.index}}.png" alt="..."></a></li>
+							{% for i in (1..8) %}
+								<li><a href="#"><img src="http://placehold.it/200x127" alt="..."></a></li>
 							{% endfor %}
 						</ul>
 					</div>

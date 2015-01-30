@@ -16,7 +16,7 @@
 // Hero
 $hero-height: rem-calc(150) !default;
 $hero-height-medium: rem-calc(1100) !default;
-$hero-background-attachment: inherit !default;
+$hero-background-attachment: fixed !default;
 
 // Captions
 $hero-caption-header-font-family: $header-font-family !default;

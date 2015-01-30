@@ -24,6 +24,25 @@ $(window).load(function() {
 // }
 
 //-----------------------------------------------------------------
+// Scroll To
+//-----------------------------------------------------------------
+
+$('a[href*=#]').each(function(){
+  var $this = $(this);
+  var href = $this.attr('href');
+
+  // If there's a hash in the href and the string is more than 0 in length
+  // fire the scrollTo plugin
+
+  $this.click(function(){
+    if (href.indexOf('#') == 0 && href.length > 1) {
+      // console.log(href);
+      $.scrollTo(href, 400);
+    }
+  });
+});
+
+//-----------------------------------------------------------------
 // Offcanvas Menu
 //-----------------------------------------------------------------
 

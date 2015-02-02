@@ -21,13 +21,20 @@
 
 <ul>
 	{% comment %} Important: leave 'Home' out of the loop {% endcomment %}
-	<li class="{% if page.url == "/" %} active {% endif %}"><a href="/">Home</a></li>
+	<li class="{% if page.url == "/" %} active {% endif %}"><a class="anchor" href="/">Home</a></li>
 
 	{% comment %} First Level {% endcomment %}
 	{% for item in sitemap | offset: 1 %}
 	{% assign active_path = item.title | downcase | slugify %}
 	<li class="{% for path in url_paths %}{% if path == active_path %}active{% endif %}{% endfor %}{% if item.children %} has-dropdown {% endif %}">
-		<a href="{{ item.url }}">{{ item.title }}</a>
+
+	{% comment %} Added 02.01.15 - Parent triggers submenu instead of link where it passes a HASH {% endcomment %}
+	{% if item.url == "#" %}
+		<span class="anchor">{{ item.title }}</span>
+	{% else %}
+		<a class="anchor" href="{{ item.url }}">{{ item.title }}</a>
+	{% endif %}
+
 
 		{% comment %} Second Level {% endcomment %}
 		{% if item.children and item.include_children_in_nav %}

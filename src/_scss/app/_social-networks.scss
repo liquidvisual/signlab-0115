@@ -26,6 +26,16 @@
 	}
 }
 
+.collage-info-panel .social-networks {
+	a {
+		width: rem-calc(30);
+		line-height: rem-calc(30);
+		font-size: rem-calc(16);
+		background: #292828;
+		color: white;
+	}
+}
+
 .no-touch .social-networks a:hover {
 	background: darken($primary-color, 15%);
 	color: white;

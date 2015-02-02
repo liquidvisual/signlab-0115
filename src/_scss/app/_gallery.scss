@@ -9,7 +9,6 @@
 //-----------------------------------------------------------------
 
 $horizontal-slider-button-height: 50px;
-$slider-triangle-size: 24px;
 
 //-----------------------------------------------------------------
 // Image Gallery (Lightbox)
@@ -36,6 +35,7 @@ $slider-triangle-size: 24px;
 
 	li {
 		text-align: center;
+		padding: rem-calc(0 5);
 
 		img {
 			display: inline-block;
@@ -44,10 +44,15 @@ $slider-triangle-size: 24px;
 
 	.slick-prev:before,
 	.slick-next:before {
+		display: none;
 		font-family: "FontAwesome";
 		font-size: rem-calc(50);
 		position: relative;
 		top: -15px;
+
+		@media #{$medium-up} {
+		    display: block;
+		}
 	}
 
 	.slick-prev:before {
@@ -67,58 +72,12 @@ $slider-triangle-size: 24px;
 	// }
 }
 
-//-----------------------------------------------------------------
-// Gallery Slider
-//-----------------------------------------------------------------
-
-.js-gallery-slider .slider-nav {
-	margin: 0;
-}
-
-//=========================================
-// Buttons
-//=========================================
-
-.js-gallery-slider li .button {
-	position: relative;
-	background: #E5E5E5;
-	display: block;
-	margin-right: rem-calc(25);
-	padding: rem-calc(0 20);
-	line-height: $horizontal-slider-button-height;
-	height: $horizontal-slider-button-height;
-	border: 1px solid #9BA1AA;
-	color: $secondary-color;
-	text-transform: uppercase;
-	font-size: rem-calc(15);
-	font-weight: bold;
-	text-align: left;
-	border-radius: $global-radius 0 0 $global-radius;
-
-	width: 250px;
-	white-space: nowrap;
-	// overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.js-gallery-slider .active .button {
-	background: white;
-}
-
-.js-gallery-slider .active .button .arrow-box {
-	border-left-color: white;
-}
-
-.arrow-box {
-	@include transition();
+.swipe-right-icon {
 	position: absolute;
-	top: 0;
-	right: -$slider-triangle-size*2;
-
-	border-top: $slider-triangle-size solid transparent;
-	border-right: $slider-triangle-size solid transparent;
-	border-bottom: $slider-triangle-size solid transparent;
-	border-left: $slider-triangle-size solid #E5E5E5;
-	// background: rgba(0,0,0,.2);
-	// margin: 40px;
+	left: 0;
+	bottom: -20px;
+	background: url(../img/template/swipe-right.svg) no-repeat center;
+	background-size: 40px;
+	width: 100%;
+	height: 40px;
 }

@@ -1,0 +1,30 @@
+{% assign hero_image = "/img/content/banner-2.jpg" %}
+
+<!-- HERO MODULE -->
+<div class="lv-hero-module collage-style">
+
+    <!-- Hero Item -->
+    <ul class="lv-hero">
+        {% for i in (1..15) %}
+           <li>
+                <img width="100%" src="http://lorempixel.com/386/386/people?{{i}}">
+                <div class="collage-info-panel">
+                    <div class="inner">
+                        <h5>Corey Simpson</h5>
+                        <p>Managing Director <br>
+                        Signwriter<br>
+                        Sign Fabricator 3D<br>
+                        <a href="mailto:corey@signlab.com.au">corey@signlab.com.au</a></p>
+                        <ul class="social-networks lv-inline-list close-gaps text-center">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div> <!-- .inner -->
+                </div> <!-- .collage-info-panel -->
+            </li>
+        {% endfor %}
+    </ul>
+
+</div> <!-- .lv-hero-module -->

@@ -11,12 +11,23 @@
 // Hero
 //-----------------------------------------------------------------
 
-.lv-hero .secondary-button {
-	background: #F48734;
+.lv-hero-module {
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+	}
+	.lv-hero {
+		position: relative; // will this break?
+	}
 }
 
 .lv-hero-caption {
 	text-transform: uppercase;
+	z-index: 1;
 }
 
 //=========================================
@@ -24,21 +35,113 @@
 //=========================================
 
 .lv-hero-module.promo-style {
-	.lv-hero {
-		height: 900px;
-	}
 
 	.lv-hero-caption {
-		padding: 30px;
+		padding: rem-calc(30 0);
 		margin: 0;
 		background: rgba($primary-color, .9);
-		height: 900px;
-		line-height: 900px;
-		// width: 40%;
 		float: right;
 
 		@media #{$medium-up} {
+			height: 900px;
+		    width: 60%;
+		    padding: rem-calc(30 70);
+		}
+
+		@media #{$large-up} {
 		    width: 40%;
 		}
 	}
 }
+
+.lv-hero-module.promo-style {
+    @media #{$medium-up} {
+       height: rem-calc(900);
+    }
+}
+
+//-----------------------------------------------------------------
+// Collage Style
+//-----------------------------------------------------------------
+
+.lv-hero-module.collage-style {
+	@media #{$medium-up} {
+	   height: auto;
+	}
+
+	.lv-hero {
+		@include block-grid($per-row: 2, $spacing: 0, $base-style: true);
+
+		@media #{$large-up} {
+		    @include block-grid($per-row: 5, $spacing: 0, $base-style: true);
+		}
+
+		li {
+			position: relative;
+			margin: 0;
+			cursor: pointer;
+		}
+	}
+
+	.lv-hero li:hover .collage-info-panel {
+		opacity: 1;
+	}
+
+	.collage-info-panel {
+		@include transition();
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: $primary-color;
+		opacity: 0;
+		color: white;
+		padding: rem-calc(10);
+		text-align: center;
+		overflow: hidden;
+
+		-moz-background-clip: border;     /* Firefox 3.6 */
+		 -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+		 background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+		 -moz-background-clip: padding;     /* Firefox 3.6 */
+		 -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+		 background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+		 -moz-background-clip: content;     /* Firefox 3.6 */
+		 -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
+		 background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+
+		.inner {
+		    position: relative;
+		    top: 50%; // to account for top margins of H1s
+		    -webkit-transform: translateY(-50%);
+		        -ms-transform: translateY(-50%);
+		            transform: translateY(-50%);
+		}
+
+		h5 {
+			color: white;
+			font-size: rem-calc(12);
+
+			@media #{$medium-up} {
+			    font-size: rem-calc(14);
+			}
+		}
+
+		a {
+			color: white;
+		}
+
+		p {
+			font-size: rem-calc(12);
+			margin-bottom: rem-calc(10);
+
+			@media #{$medium-up} {
+			    font-size: rem-calc(14);
+			}
+		}
+	}
+}
+

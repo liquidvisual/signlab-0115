@@ -2,7 +2,7 @@
 /*
     LIQUIDVISUAL HERO :: A Personal Framework
 
-    - updated: 27.01.15
+    - updated: 01.02.15
     - liquidvisual.com
 
     - Notes -
@@ -73,12 +73,15 @@ $hero-carousel-bullet-size: 12px;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: $hero-background-attachment;
 
     -webkit-background-size: cover;
        -moz-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
+}
+
+.no-touch .lv-hero {
+    background-attachment: $hero-background-attachment;
 }
 
 .is-alternate .lv-hero {
@@ -119,7 +122,7 @@ $hero-carousel-bullet-size: 12px;
 
     p {
         font-size: $hero-caption-paragraph-font-size;
-        margin-bottom: 0;
+        // margin-bottom: 0;
     }
 
     @media #{$medium-up} {
@@ -152,10 +155,10 @@ $hero-carousel-bullet-size: 12px;
 .lv-hero .lv-vertical-center {
     @media #{$medium-up} {
         position: relative;
-        top: 30%; // to account for top margins of H1s
-        -webkit-transform: translateY(-30%);
-            -ms-transform: translateY(-30%);
-                transform: translateY(-30%);
+        top: 50%; // to account for top margins of H1s
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
     }
 }
 

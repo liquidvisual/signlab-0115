@@ -217,9 +217,9 @@ $header-font-color: $secondary-color; //$jet;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(74);
-$h2-font-size: rem-calc(60); //rem-calc(37);
-$h3-font-size: rem-calc(30);
+$h1-font-size: rem-calc(99);
+$h2-font-size: rem-calc(62); //rem-calc(37);
+$h3-font-size: rem-calc(33);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
@@ -271,7 +271,7 @@ $paragraph-font-size: 1.2rem;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+$hr-border-width: 2px;
 // $hr-border-style: solid;
 // $hr-border-color: $gainsboro;
 // $hr-margin: rem-calc(20);

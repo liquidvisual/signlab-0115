@@ -24,20 +24,57 @@ $(window).load(function() {
 // }
 
 //-----------------------------------------------------------------
+// WOW.js - Scroll Fade In
+//-----------------------------------------------------------------
+
+if (!TOUCH_ENABLED) {
+  var wow = new WOW(
+  {
+      boxClass:     'section',      // default
+      animateClass: 'animated', // default
+      offset:       0           // default
+  }
+  ).init();
+}
+
+//-----------------------------------------------------------------
+// Toggle Excess Items (Eg Gallery pics that exceed amount)
+//-----------------------------------------------------------------
+
+$(".item-expander").click(function(e){
+    var $this = $(this); // JQ object
+    e.preventDefault();
+    this.toggleState = this.toggleState ? false : true;
+
+    // Toggle text - easy way
+    // http://stackoverflow.com/questions/3442394/jquery-using-text-to-retrieve-only-text-not-nested-in-child-tags
+
+    $this.contents().filter(function(){
+      return this.nodeType == 3;
+    })[0].nodeValue = this.toggleState ? "Show Less " : "Show More ";
+
+    $(".excess").toggleClass('hide animated fadeIn');
+    $("i", $this).toggleClass('fa-angle-down');
+});
+
+//-----------------------------------------------------------------
 // Scroll To
 //-----------------------------------------------------------------
 
 $('a[href*=#]').each(function(){
   var $this = $(this);
   var href = $this.attr('href');
+  var endPos = $(href);
 
   // If there's a hash in the href and the string is more than 0 in length
   // fire the scrollTo plugin
 
-  $this.click(function(){
+  $this.click(function(e){
+    e.preventDefault();
+
     if (href.indexOf('#') == 0 && href.length > 1) {
       // console.log(href);
-      $.scrollTo(href, 400);
+      $.scrollTo(endPos.offset().top-100, 400);
     }
   });
 });
@@ -82,7 +119,7 @@ $('.horizontal-slider-module').slick({
   arrows: true,
   slidesToShow: 4,
   slidesToScroll: 2,
-  dots: true,
+  dots: false,
   responsive: [
     {
       breakpoint: 480,

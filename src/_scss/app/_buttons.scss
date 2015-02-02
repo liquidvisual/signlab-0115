@@ -13,8 +13,28 @@
 
 .button {
 	text-transform: uppercase;
+	padding: rem-calc(15 25);
+}
+
+.secondary-button {
+	background: #F48734;
+
+	&:hover {
+		background: darken(#F48734, 10%);
+	}
 }
 
 //=========================================
 //
 //=========================================
+
+.knockout {
+	@include transition();
+	background: none;
+	border: 1px solid white;
+
+	&:hover {
+		background: white;
+		color: #222;
+	}
+}

@@ -17,17 +17,14 @@ $header-height-medium: rem-calc(100) !default;
 //-----------------------------------------------------------------
 
 .header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
 	background: $primary-color;
 	height: $header-height-small;
 	transition: top 0.3s ease-out;
 	z-index: 100;
-
-	@media #{$large-up} {
-	    position: fixed;
-	    top: -100px;
-	    width: 100%;
-	}
 
 	@media #{$medium-up} {
 	    height: $header-height-medium;
@@ -35,9 +32,10 @@ $header-height-medium: rem-calc(100) !default;
 	}
 }
 
-.nav-up {
-    top: 0;
-}
+// No Longer needed
+// .nav-up {
+//     top: 0;
+// }
 
 //=========================================
 // Vertical Center

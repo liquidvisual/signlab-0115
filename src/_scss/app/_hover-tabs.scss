@@ -1,0 +1,109 @@
+/*
+    HOVER SLIDER.CSS
+
+    - Last updated: ^^^^^^^^
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+
+$slider-triangle-size: 24px;
+
+//-----------------------------------------------------------------
+// Hover Tabs Module
+//-----------------------------------------------------------------
+
+.hover-tabs ul {
+	list-style: none;
+}
+
+//-----------------------------------------------------------------
+// Hover Tabs Nav
+//-----------------------------------------------------------------
+
+.hover-tabs-nav {
+	@include block-grid($per-row: 1, $spacing: 15px, $base-style: true);
+
+	@media #{$medium-only} {
+	    @include block-grid($per-row: 2, $spacing: 15px, $base-style: true);
+	}
+}
+
+//=========================================
+// Buttons
+//=========================================
+
+.hover-tabs li .button {
+	position: relative;
+	background: #E5E5E5;
+	display: block;
+	margin: 0;
+	padding: rem-calc(0 20);
+	line-height: $horizontal-slider-button-height;
+	height: $horizontal-slider-button-height;
+	border: 1px solid #9BA1AA;
+	color: $secondary-color;
+	text-transform: uppercase;
+	font-size: rem-calc(15);
+	font-weight: bold;
+	text-align: left;
+	border-radius: $global-radius;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	@media #{$large-up} {
+	    width: 310px;
+	    min-width: 310px;
+	    border-radius: $global-radius 0 0 $global-radius;
+	    overflow: visible;
+	}
+}
+
+.no-touch .hover-tabs .button:hover,
+.hover-tabs .active .button {
+	background: white;
+}
+
+.hover-tabs .active .button .arrow-box {
+	border-left-color: white;
+}
+
+// CSS Arrow Boxes
+
+@media #{$large-up} {
+    .arrow-box {
+    	@include transition();
+    	position: absolute;
+    	top: 0;
+    	right: -$slider-triangle-size*2;
+
+    	border-top: $slider-triangle-size solid transparent;
+    	border-right: $slider-triangle-size solid transparent;
+    	border-bottom: $slider-triangle-size solid transparent;
+    	border-left: $slider-triangle-size solid #E5E5E5;
+    }
+
+    .hover-tabs li .button:hover .arrow-box {
+    	border-left: $slider-triangle-size solid white;
+    }
+}
+
+//-----------------------------------------------------------------
+// Hover Tabs Images
+//-----------------------------------------------------------------
+
+.hover-tabs-images {
+	margin-bottom: rem-calc(30);
+	margin-left: 0;
+
+	li {
+		display: none;
+
+		&:first-child {
+			display: block;
+		}
+	}
+}

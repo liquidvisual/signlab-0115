@@ -21,7 +21,7 @@
 
 .section .headline {
 	position: relative;
-	padding-bottom: rem-calc(20);
+	padding-bottom: rem-calc(10);
 	border-bottom: 2px solid $secondary-color;
 	margin-bottom: rem-calc(70);
 
@@ -50,6 +50,11 @@
 			background: $primary-color;
 		}
 	}
+}
+
+.headline-back {
+	position: relative;
+	top: rem-calc(-50);
 }
 
 //=========================================

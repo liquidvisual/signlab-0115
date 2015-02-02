@@ -3,15 +3,22 @@ layout: master
 ---
 
 {% assign settings = site.data.settings %}
+{% assign gallery_image_count = 12 %}
 
 <div class="homepage">
 
+
+
 	{% include hero.html %}
 
-	{% include content_section.html theme="normal" %}
+	{% include hero_alternate.html %}
 
-	<!-- GALLERY -->
-	<section class="section section-dark">
+	{% include hero_collage.html %}
+
+	{% include content_section.html theme="normal" id="about-us" %}
+
+	<!-- HOVER TABS -->
+	<section class="section section-dark fadeIn">
 		<div class="row outer-row">
 			<div class="columns">
 
@@ -20,14 +27,14 @@ layout: master
 					<h3 class="subheader">1440dpi Print</h3>
 				</div>
 
-				{% include gallery_slider.html %}
+				{% include hover_tabs.html %}
 
 			</div> <!-- .columns -->
 		</div> <!-- .row -->
 	</section> <!-- .section -->
 
 	<!-- GALLERY SECTION -->
-	<section class="section">
+	<section class="section fadeIn">
 		<div class="row outer-row">
 			<div class="columns">
 
@@ -43,10 +50,15 @@ layout: master
 						<br>
 
 						<ul class="gallery-module">
-							{% for i in (1..8) %}
-								<li><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
+							{% for i in (1..gallery_image_count) %}
+								<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
 							{% endfor %}
 						</ul>
+
+						{% if gallery_image_count > 8 %}
+							<br>
+							<p class="text-right"><a class="item-expander" href="#">See More <i class="fa fa-angle-up fa-angle-down"></i></a></p>
+						{% endif %}
 
 					</div>
 				</div> <!-- .row -->
@@ -56,7 +68,7 @@ layout: master
 	</section> <!-- .section -->
 
 	<!-- CLIENTS -->
-	<section class="section section-dark">
+	<section class="section section-dark fadeIn">
 		<div class="row outer-row">
 			<div class="columns">
 
@@ -73,11 +85,14 @@ layout: master
 								<li><a href="#"><img src="http://placehold.it/200x127" alt="..."></a></li>
 							{% endfor %}
 						</ul>
+						<div class="swipe-right-icon show-for-small-only"></div>
 					</div>
 				</div>
 
 			</div> <!-- .columns -->
 		</div> <!-- .row -->
 	</section> <!-- .section -->
+
+	{% include showcase_section.html %}
 
 </div> <!-- .homepage -->

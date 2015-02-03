@@ -2,7 +2,7 @@
 /*
     LIQUIDVISUAL HERO :: A Personal Framework
 
-    - updated: 01.02.15
+    - updated: 03.02.15
     - liquidvisual.com
 
     - Notes -
@@ -39,11 +39,15 @@ $hero-carousel-bullet-size: 12px;
     height: auto;
     margin-bottom: 0;
 
+    @media #{$medium-up} {
+       height: $hero-height-medium;
+    }
+
     &.has-auto-height {
         height: auto;
     }
 
-    &.has-fixed-height {
+    &.is-fixed-height {
         height: $hero-height;
 
         @media #{$medium-up} {
@@ -51,9 +55,9 @@ $hero-carousel-bullet-size: 12px;
         }
     }
 
-    @media #{$medium-up} {
-       height: $hero-height-medium;
-    }
+    // &.is-fullscreen {
+    //     height: calc(100vh - 100px);
+    // }
 }
 
 //=========================================

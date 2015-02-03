@@ -1,11 +1,11 @@
 {% assign hero = "/img/content/banner-1.jpg" %}
 
 <!-- HERO MODULE -->
-<div class="lv-hero-module default-style">
+<div class="lv-hero-module is-fullscreen default-style">
 
     <!-- Hero Item -->
     <div class="lv-hero" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
-        <div class="overlay show-for-small-only"></div>
+        <div class="overlay hide-for-xlarge-up"></div>
 
         <div class="row row-outer lv-vertical-center text-center">
             <div class="columns">
@@ -16,7 +16,7 @@
 
                     <div class="lv-hero-caption-body">
                         <p><a class="button radius" href="#about-us">About Us</a>
-                        <a class="button secondary-button radius" href="#contact-form">Contact Us</a></p>
+                        <a class="button secondary-button radius" href="#contact">Contact Us</a></p>
                     </div>
 
                 </div> <!-- .lv-hero-caption -->

@@ -2,25 +2,25 @@
   url: /
 
 - title: About
-  url: /about/
+  url: "/about/"
 
 - title: Signage
   url: "#"
   include_children_in_nav: true
   children:
     - title: Service One
-      url: /services/service-one/
+      url: "/signage/#something"
     - title: Service Two
-      url: /services/service-two/
+      url: "/signage/#something"
 
 - title: Banners
-  url: /banners/
+  url: /signage/
 
 - title: Vehicles
-  url: /portfolio/
+  url: /signage/
 
 - title: Showcase
-  url: /blog/
+  url: /showcase/
 
 - title: Contact
-  url: /contact/
+  url: "#contact"

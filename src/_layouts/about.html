@@ -1,0 +1,108 @@
+---
+layout: master
+---
+
+<!-- HERO -->
+{% include hero_collage.html %}
+
+<!-- ESTABLISHED 1992 -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-5 large-push-7 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-7 large-pull-5 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+
+			    <p>aliquip ex ea commodo
+			    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=false title="Established 1992" subheader="Tested and Trusted" body=section_body %}
+
+<!-- IN-HOUSE GRAPHIC DESIGNERS -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=false title="In-House Graphic Designers" subheader="Qualified" body=section_body %}
+
+<!-- 3M PREFERRED INSTALLERS -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-6 large-push-6 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-6 large-pull-6 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+			<p><a href="#" class="button">Learn More</a>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=true title="3M Preferred Installers" subheader="Accreditation" body=section_body %}
+
+<!-- EXPERIENCE / GOOD ADVICE -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=false title="Experience / Good Advice" subheader="Qualifications" body=section_body %}
+
+<!-- SPECIALIST SIGNAGE INSTALLERS -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-6 large-push-6 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-6 large-pull-6 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=true title="Specialist Signage Installers" subheader="Experience" body=section_body %}
+
+<!-- OUR CLIENTS -->
+{% capture section_body %}
+	<div class="row">
+		<div class="columns">
+			<!-- Slider Module Horizontal -->
+			<ul class="horizontal-slider-module">
+				{% for i in (1..5) %}
+					<li><a href="#"><img src="/img/content/client-{{i}}.png" alt="..."></a></li>
+				{% endfor %}
+			</ul>
+			<div class="swipe-right-icon show-for-small-only"></div>
+		</div>
+	</div>
+{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=false title="Our Clients" subheader="and Friends" body=section_body %}
+
+<!-- FOOTER -->
+<footer class="footer">
+    {% include footer.html order_map_top=false %}
+</footer>

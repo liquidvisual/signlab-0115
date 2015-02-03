@@ -21,9 +21,11 @@ $header-height-medium: rem-calc(100) !default;
 	top: 0;
 	width: 100%;
 
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+
 	background: $primary-color;
 	height: $header-height-small;
-	transition: top 0.3s ease-out;
+	// transition: top 0.3s ease-out;
 	z-index: 100;
 
 	@media #{$medium-up} {
@@ -57,7 +59,7 @@ $header-height-medium: rem-calc(100) !default;
 	width: rem-calc(150);
 
 	@media #{$medium-up} {
-	    width: rem-calc(204);
+	    width: rem-calc(210);
 	}
 }
 
@@ -66,10 +68,9 @@ $header-height-medium: rem-calc(100) !default;
 //=========================================
 
 .header-mobile-menu {
-	background: red;
+	// background: red;
 	height: 100%;
 	top: 0;
-
 }
 
 .hamburger {

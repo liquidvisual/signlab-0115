@@ -15,12 +15,17 @@
     color: $primary-color;
 }
 
+.no-bottom-margin {
+	margin-bottom: 0;
+}
+
 //-----------------------------------------------------------------
 // Page Curl
 //-----------------------------------------------------------------
 
 .has-page-curl .img {
 	position: relative;
+	z-index: 1;
 }
 
 .has-page-curl .img:after {

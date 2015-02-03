@@ -1,0 +1,48 @@
+---
+layout: master
+---
+
+<!-- SHOWCASE DETAIL -->
+{% capture section_body %}
+	<a class="headline-back" href="/showcase/"><i class="fa fa-angle-left"></i> BACK TO SHOWCASE</a>
+
+	<div class="row">
+		<div class="large-7 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-5 columns">
+			<h4 class="subheader">Blue Chrome Ute Wrap</h4>
+			<p><date>26 Nov 2014</date></p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi</p>
+		</div>
+	</div> <!-- .row -->
+
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=true title="Showcase" subheader="" body=section_body %}
+
+<!-- GALLERY MODULE -->
+<section>
+	<div class="row outer-row">
+		<div class="columns">
+			<!-- Gallery Module -->
+			<ul class="gallery-module">
+				{% assign gallery_image_count = 12 %}
+				{% for i in (1..gallery_image_count) %}
+					<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
+				{% endfor %}
+			</ul>
+
+			{% if gallery_image_count > 8 %}
+				<br>
+				<p class="text-right"><a class="item-expander" href="#">See More <i class="fa fa-angle-up fa-angle-down"></i></a></p>
+			{% endif %}
+		</div>
+	</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    {% include footer.html order_map_top=false %}
+</footer>

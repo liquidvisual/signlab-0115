@@ -1,7 +1,7 @@
 /*
-    HOVER SLIDER.CSS
+    HOVER TABS.CSS
 
-    - Last updated: ^^^^^^^^
+    - Last updated: 03.02.15
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -35,6 +35,7 @@ $slider-triangle-size: 24px;
 //=========================================
 
 .hover-tabs li .button {
+	transition: none;
 	position: relative;
 	background: #E5E5E5;
 	display: block;
@@ -43,6 +44,7 @@ $slider-triangle-size: 24px;
 	line-height: $horizontal-slider-button-height;
 	height: $horizontal-slider-button-height;
 	border: 1px solid #9BA1AA;
+
 	color: $secondary-color;
 	text-transform: uppercase;
 	font-size: rem-calc(15);
@@ -55,6 +57,7 @@ $slider-triangle-size: 24px;
 	overflow: hidden;
 
 	@media #{$large-up} {
+		border-right: 0;
 	    width: 310px;
 	    min-width: 310px;
 	    border-radius: $global-radius 0 0 $global-radius;
@@ -74,20 +77,51 @@ $slider-triangle-size: 24px;
 // CSS Arrow Boxes
 
 @media #{$large-up} {
-    .arrow-box {
-    	@include transition();
-    	position: absolute;
-    	top: 0;
-    	right: -$slider-triangle-size*2;
+    // .arrow-box {
+    // 	@include transition();
+    // 	position: absolute;
+    // 	top: 0;
+    // 	right: -$slider-triangle-size*2;
 
-    	border-top: $slider-triangle-size solid transparent;
-    	border-right: $slider-triangle-size solid transparent;
-    	border-bottom: $slider-triangle-size solid transparent;
-    	border-left: $slider-triangle-size solid #E5E5E5;
+    // 	border-top: $slider-triangle-size solid transparent;
+    // 	border-right: $slider-triangle-size solid transparent;
+    // 	border-bottom: $slider-triangle-size solid transparent;
+    // 	border-left: $slider-triangle-size solid #E5E5E5;
+    // }
+
+    .arrow-box {
+    	position: absolute;
+    	top: 24px;
+    	right: 0px;
+    	background: red;
+    	z-index: 1;
+    }
+    .arrow-box:after, .arrow-box:before {
+    	left: 100%;
+    	top: 50%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
     }
 
-    .hover-tabs li .button:hover .arrow-box {
-    	border-left: $slider-triangle-size solid white;
+    .arrow-box:after {
+    	border-color: rgba(229, 229, 229, 0);
+    	border-left-color: #E5E5E5;
+    	border-width: 24px;
+    	margin-top: -24px;
+    }
+    .arrow-box:before {
+    	border-color: rgba(155, 161, 170, 0);
+    	border-left-color: #9BA1AA;
+    	border-width: 25px;
+    	margin-top: -25px;
+    }
+
+    .no-touch .hover-tabs li .button:hover .arrow-box:after {
+    	border-left-color: white;
     }
 }
 

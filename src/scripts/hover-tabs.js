@@ -1,26 +1,27 @@
 /*
-    HOVER TABS - Last updated: 01.02.15
+    HOVER TABS - Last updated: 03.02.15
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
-
-var hoverTabsImages = $('.hover-tabs-images li');
-
 //-----------------------------------------------------------------
 // Hover Tabs
 //-----------------------------------------------------------------
 
-$('.hover-tabs-nav .button').each(function(index){
-	var $this = $(this);
+$('.hover-tabs').each(function(){
+	var $module = $(this);
+	var $hoverTabsImages = $('.hover-tabs-images li', $module);
 
-	// Store index of button
-	$this.data('index', index);
+	$('.hover-tabs-nav .button', $module).each(function(index){
+		var $this = $(this);
 
-	$this.mouseover(function(){
-		// console.log($this.data('index'));
+		// Store index of button
+		$this.data('index', index);
 
-		hoverTabsImages.hide();
-		hoverTabsImages.eq($this.data('index')).show();
+		// On Hover match up image and show it (hide all others)
+		$this.mouseover(function(){
+			$hoverTabsImages.hide();
+			$hoverTabsImages.eq($this.data('index')).show();
+		});
 	});
 });

@@ -1,23 +1,13 @@
-<!-- CONTENT SECTION -->
-<section id="{{ include.id }}" class="section has-page-curl {{ include.theme }} fadeIn">
+<section id="{{ include.title | slugify }}" class="section {% if include.page_curl %}has-page-curl{% endif %}  {{ include.theme }} fadeIn">
 	<div class="row outer-row">
 		<div class="columns">
 
 			<div class="headline">
-				<h2>About Us</h2>
-				<h3 class="subheader">Local, Reliable &amp; Affordable</h3>
+				<h2>{{ include.title }}</h2>
+				<h3 class="subheader">{{ include.subheader }}</h3>
 			</div>
 
-			<div class="row">
-				<div class="large-8 large-push-4 columns">
-					<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
-				</div>
-				<div class="large-4 large-pull-8 columns">
-					<p>That's right, WE GET IT! At Signlab we understand the importance of Customer Service as it has been lacking in the signage industry for many years. So not only will you recieve affordable quality signs and signwriting, you will also benefit from exceptional customer service.</p>
-					<br>
-					<p><a href="#" class="button radius">Learn More</a></p>
-				</div>
-			</div> <!-- .row -->
+			{{ include.body }}
 
 		</div> <!-- .columns -->
 	</div> <!-- .row -->

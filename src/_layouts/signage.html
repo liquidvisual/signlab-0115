@@ -1,0 +1,97 @@
+---
+layout: master
+---
+
+<!-- HERO -->
+{% include hero_alternate.html %}
+
+<!-- VAN WRAP GALLERY -->
+{% capture section_body %}
+	<div class="row">
+		<div class="columns">
+			<p>More Van Wraps completed here in Adelaide to view on our <a href="{{ settings.facebook }}">Facebook</a> or <a href="{{ settings.google_plus }}">Google Plus pages.</a></p>
+
+			<br>
+
+			<ul class="gallery-module">
+				{% assign gallery_image_count = 12 %}
+				{% for i in (1..gallery_image_count) %}
+					<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
+				{% endfor %}
+			</ul>
+
+			{% if gallery_image_count > 8 %}
+				<br>
+				<p class="text-right"><a class="item-expander" href="#">See More <i class="fa fa-angle-up fa-angle-down"></i></a></p>
+			{% endif %}
+
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=false title="Van Wrap Gallery" subheader="36 Month Warranty" body=section_body %}
+
+<!-- Complimentary Design -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=false title="Complimentary Design" subheader="with Any Full or Partial Wrap" body=section_body %}
+
+<!-- 3M PREFERRED INSTALLERS -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-6 large-push-6 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-6 large-pull-6 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+			<p><a href="#" class="button">Learn More</a>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=true title="3M Preferred Installers" subheader="Accreditation" body=section_body %}
+
+<!-- 36 MONTH WARRANTY -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=false title="36 Month Warranty" subheader="Unrivalled Confidence" body=section_body %}
+
+<!-- VEHICLE WRAP PROMO -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<iframe src="//player.vimeo.com/video/115929151" width="100%" height="420" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut</p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=false title="Vehicle Wrap Promo" subheader="wrap.tv" body=section_body %}
+
+<!-- FOOTER -->
+<footer class="footer">
+    {% include footer.html order_map_top=true %}
+</footer>

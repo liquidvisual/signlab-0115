@@ -72,13 +72,15 @@
 	color: $secondary-color;
 	text-transform: uppercase;
 	font-size: rem-calc(14);
+	cursor: pointer;
 }
 
 //=========================================
 // Nested Dropdowns
 //=========================================
 
-.topbar .has-dropdown:hover > .anchor {
+.topbar .has-dropdown:hover > .anchor,
+.topbar .has-dropdown:hover > a {
 	background: $primary-color;
 	color: white;
 }
@@ -99,11 +101,12 @@
 }
 
 // Dropdown Color is here
-.topbar .dropdown .anchor {
+.topbar .dropdown a {
 	display: block;
 	padding: rem-calc(10 15);
 	background: #084A86; //darken($primary-color, 10%);
 	color: white;
+	font-size: rem-calc(14);
 
 	&:hover {
 		background: darken($primary-color, 15%);

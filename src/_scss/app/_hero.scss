@@ -8,6 +8,37 @@
 // Variables
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
+// Fullscreen
+//-----------------------------------------------------------------
+
+.lv-hero-module {
+	&.is-fullscreen {
+		height: -moz-calc(100vh - #{$header-height-small});
+		height: -webkit-calc(100vh - #{$header-height-small});
+	    height: calc(100vh - #{$header-height-small});
+	    // min-height: calc(100vh - #{$header-height-small});
+
+	    @media #{$medium-up} {
+	    	height: 668px; // Fallback for iPad io6
+	    	height: -moz-calc(100vh - #{$header-height-medium});
+	    	height: -webkit-calc(100vh - #{$header-height-medium});
+	    	height: calc(100vh - #{$header-height-medium});
+	        // min-height: calc(100vh - #{$header-height-medium});
+	    }
+	}
+}
+
+// Override liquidvisual
+
+.is-fullscreen .lv-hero .lv-vertical-center {
+    position: relative;
+    top: 40%; // to account for top margins of H1s
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+//-----------------------------------------------------------------
 // Hero
 //-----------------------------------------------------------------
 
@@ -65,6 +96,8 @@
 //-----------------------------------------------------------------
 
 .lv-hero-module.collage-style {
+	background: #e1e1e1;
+
 	@media #{$medium-up} {
 	   height: auto;
 	}
@@ -81,10 +114,6 @@
 			margin: 0;
 			cursor: pointer;
 		}
-	}
-
-	.lv-hero li:hover .collage-info-panel {
-		opacity: 1;
 	}
 
 	.collage-info-panel {
@@ -145,3 +174,12 @@
 	}
 }
 
+//=========================================
+// Hovers - uses JS - account for touch computers
+//=========================================
+
+@media #{$xlarge-up} {
+    .lv-hero-module.collage-style .lv-hero li:hover .collage-info-panel {
+    	opacity: 1;
+    }
+}

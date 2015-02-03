@@ -2,97 +2,37 @@
 layout: master
 ---
 
-{% assign settings = site.data.settings %}
-{% assign gallery_image_count = 12 %}
+<!-- HERO -->
+{% include hero.html %}
 
-<div class="homepage">
+<!-- ABOUT US -->
+{% capture section_body %}
+	<div class="row">
+		<div class="large-8 large-push-4 columns">
+			<p class="img"><img width="100%" src="http://lorempixel.com/400/200"></p>
+		</div>
+		<div class="large-4 large-pull-8 columns">
+			<p>That's right, WE GET IT! At Signlab we understand the importance of Customer Service as it has been lacking in the signage industry for many years. So not only will you recieve affordable quality signs and signwriting, you will also benefit from exceptional customer service.</p>
+			<br>
+			<p><a href="#" class="button">Learn More</a></p>
+		</div>
+	</div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=false title="About Us" subheader="Local, Reliable &amp; Affordable" body=section_body %}
 
+<!-- SIGNAGE -->
+{% capture section_body %}{% include hover_tabs.html %}{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=true title="Signage" subheader="1440dpi Print" body=section_body %}
 
+<!-- BANNERS -->
+{% capture section_body %}{% include hover_tabs.html %}{% endcapture %}
+{% include content_section.html theme="light-theme" page_curl=true title="Banners" subheader="1440dpi Print" body=section_body %}
 
-	{% include hero.html %}
+<!-- VEHICLES -->
+{% capture section_body %}{% include hover_tabs.html %}{% endcapture %}
+{% include content_section.html theme="dark-theme" page_curl=true title="Vehicles" subheader="Wraps and Graphics" body=section_body %}
 
-	{% include hero_alternate.html %}
-
-	{% include hero_collage.html %}
-
-	{% include content_section.html theme="normal" id="about-us" %}
-
-	<!-- HOVER TABS -->
-	<section class="section section-dark fadeIn">
-		<div class="row outer-row">
-			<div class="columns">
-
-				<div class="headline">
-					<h2>Signage</h2>
-					<h3 class="subheader">1440dpi Print</h3>
-				</div>
-
-				{% include hover_tabs.html %}
-
-			</div> <!-- .columns -->
-		</div> <!-- .row -->
-	</section> <!-- .section -->
-
-	<!-- GALLERY SECTION -->
-	<section class="section fadeIn">
-		<div class="row outer-row">
-			<div class="columns">
-
-				<div class="headline">
-					<h2>Van Wrap Gallery</h2>
-					<h3 class="subheader">36 Month Warranty</h3>
-				</div>
-
-				<div class="row">
-					<div class="columns">
-						<p>More Van Wraps completed here in Adelaide to view on our <a href="{{ settings.facebook }}">Facebook</a> or <a href="{{ settings.google_plus }}">Google Plus pages.</a></p>
-
-						<br>
-
-						<ul class="gallery-module">
-							{% for i in (1..gallery_image_count) %}
-								<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
-							{% endfor %}
-						</ul>
-
-						{% if gallery_image_count > 8 %}
-							<br>
-							<p class="text-right"><a class="item-expander" href="#">See More <i class="fa fa-angle-up fa-angle-down"></i></a></p>
-						{% endif %}
-
-					</div>
-				</div> <!-- .row -->
-
-			</div> <!-- .columns -->
-		</div> <!-- .row -->
-	</section> <!-- .section -->
-
-	<!-- CLIENTS -->
-	<section class="section section-dark fadeIn">
-		<div class="row outer-row">
-			<div class="columns">
-
-				<div class="headline">
-					<h2>Our Clients</h2>
-					<h3 class="subheader">and Friends</h3>
-				</div>
-
-				<div class="row">
-					<div class="columns">
-						<!-- Slider Module Horizontal -->
-						<ul class="horizontal-slider-module">
-							{% for i in (1..8) %}
-								<li><a href="#"><img src="http://placehold.it/200x127" alt="..."></a></li>
-							{% endfor %}
-						</ul>
-						<div class="swipe-right-icon show-for-small-only"></div>
-					</div>
-				</div>
-
-			</div> <!-- .columns -->
-		</div> <!-- .row -->
-	</section> <!-- .section -->
-
-	{% include showcase_section.html %}
-
-</div> <!-- .homepage -->
+<!-- FOOTER -->
+<footer class="footer">
+    {% include footer.html order_map_top=false %}
+</footer>

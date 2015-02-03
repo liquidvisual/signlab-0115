@@ -1,7 +1,14 @@
 {% assign settings = site.data.settings %}
 
+{% if include.order_map_top %}
+    <!-- Footer Map (Middle) -->
+    <section class="footer-middle">
+    	{% include snippets/google_map.html %}
+    </section>
+{% endif %}
+
 <!-- Footer Top -->
-<section id="contact-form" class="footer-top section">
+<section id="contact" class="footer-top section fadeIn">
 	<div class="row outer-row">
 		<div class="columns">
 
@@ -18,10 +25,12 @@
 	</div> <!-- .row -->
 </section>
 
-<!-- Footer Middle -->
-<section class="footer-middle">
-	{% include snippets/google_map.html %}
-</section>
+{% unless include.order_map_top %}
+    <!-- Footer Map (Middle) -->
+    <section class="footer-middle">
+    	{% include snippets/google_map.html %}
+    </section>
+{% endunless %}
 
 <!-- Footer Bottom -->
 <section class="footer-bottom">

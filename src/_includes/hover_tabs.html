@@ -5,7 +5,11 @@
 
 			<ul class="hover-tabs-images show-for-medium-up">
 				{% for i in (1..6) %}
-					<li><img width="100%" src="http://placehold.it/670x450&text={{forloop.index}}" alt="..."></li>
+					<li>
+						<div class="img">
+							<img width="100%" src="http://placehold.it/670x450&text={{forloop.index}}" alt="...">
+						</div>
+					</li>
 				{% endfor %}
 			</ul>
 

@@ -1,5 +1,5 @@
 ---
-layout: text_page
+layout: master
 title: Styleguide
 permalink: /styleguide/
 ---
@@ -7,6 +7,10 @@ permalink: /styleguide/
 <!-- ************************************************************************************** -->
 <!-- https://github.com/paulrobertlloyd/barebones/blob/master/_styleguide.php -->
 <!-- ************************************************************************************** -->
+
+<div class="row outer-row">
+   <div class="columns">
+
 <header>
    <nav role="navigation" class="breadcrumb-nav">
       <br>
@@ -434,5 +438,8 @@ p q r s t u v w x y z { | } ~</samp></pre>
    </ul>
 
   <br>
+
+     </div>
+  </div>
 
 <!-- ************************************************************************************** -->

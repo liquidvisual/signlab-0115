@@ -1,5 +1,5 @@
 /*
-    MAIN SCRIPTS - Last updated: 00-00-00
+    MAIN SCRIPTS - Last updated: 04-02-15
 */
 //-----------------------------------------------------------------
 // Variables
@@ -22,6 +22,29 @@ $(window).load(function() {
 // window.onload = function(){
 //     // NProgress.done();
 // }
+
+//-----------------------------------------------------------------
+// Hero Collage Click (Staff)
+//-----------------------------------------------------------------
+
+$('.lv-hero-module.collage-style .lv-hero li').each(function(){
+
+  var allPanels = $('.collage-info-panel');
+
+  $(this).click(function(){
+
+    // Allow user to toggle back and forth
+
+    this.toggle = this.toggle ? false : true;
+    allPanels.css('opacity', 0);
+
+    if (!this.toggle) {
+      allPanels.css('opacity', 0);
+    } else {
+      $('.collage-info-panel', $(this)).css('opacity', 1);
+  }
+  });
+});
 
 //-----------------------------------------------------------------
 // WOW.js - Scroll Fade In
@@ -64,19 +87,18 @@ $(".item-expander").click(function(e){
 $('a[href*=#]').each(function(){
   var $this = $(this);
   var href = $this.attr('href');
-  var endPos = $(href);
 
-  // If there's a hash in the href and the string is more than 0 in length
-  // fire the scrollTo plugin
+  if (href.indexOf('#') == 0 && href.length > 1) {
+    var endPos = $(href);
+    // If there's a hash in the href and the string is more than 0 in length
+    // fire the scrollTo plugin
 
-  $this.click(function(e){
-    e.preventDefault();
-
-    if (href.indexOf('#') == 0 && href.length > 1) {
-      // console.log(href);
-      $.scrollTo(endPos.offset().top-100, 400);
-    }
-  });
+    $this.click(function(e){
+        e.preventDefault();
+        // console.log(href);
+        $.scrollTo(endPos.offset().top-100, 400);
+    });
+  }
 });
 
 //-----------------------------------------------------------------
@@ -118,14 +140,14 @@ $('.horizontal-slider-module').slick({
   slide: "li",
   arrows: true,
   slidesToShow: 4,
-  slidesToScroll: 2,
+  slidesToScroll: 1,
   dots: false,
   responsive: [
     {
       breakpoint: 480,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         arrows: false,
         dots: false
       }

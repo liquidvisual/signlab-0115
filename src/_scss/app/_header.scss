@@ -30,7 +30,8 @@ $header-height-medium: rem-calc(100) !default;
 
 	@media #{$medium-up} {
 	    height: $header-height-medium;
-	    background: none; // No white strip
+	    // background: none; // No white strip
+	    background: white;
 	}
 }
 

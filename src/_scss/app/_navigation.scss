@@ -1,7 +1,7 @@
 /*
     NAVIGATION.CSS
 
-    - Last updated: ^^^^^^^^
+    - Last updated: 05.02.15
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -31,9 +31,10 @@ html.no-touch {
 	position: absolute;
 	// top: -100px;
 	top: -33px;
-	left: 270px;
-	// top: 0;
-	width: 200%; // clever trick
+	// left: 270px;
+	right: 0;
+	// width: 200%; // clever trick
+	// width: 100%;
 	margin: 0; // failsafe
 }
 

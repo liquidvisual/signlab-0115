@@ -93,7 +93,7 @@ $header-height-medium: rem-calc(100) !default;
 	background: $primary-color;
 	z-index: -1;
 
-	@media #{$large-up} {
+	@media #{$xlarge-up} {
 	    width: 50%;
 	}
 }

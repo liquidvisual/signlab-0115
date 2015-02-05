@@ -18,6 +18,11 @@
 	// left: 0;
 }
 
+// Fixes glitch with MMenu changing viewport widths when scrollbar disappears
+html.no-touch {
+	overflow-y: scroll !important;
+}
+
 //-----------------------------------------------------------------
 // Topbar
 //-----------------------------------------------------------------

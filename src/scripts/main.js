@@ -96,7 +96,7 @@ $('a[href*=#]').each(function(){
     $this.click(function(e){
         e.preventDefault();
         // console.log(href);
-        $.scrollTo(endPos.offset().top-100, 400);
+        $.scrollTo(endPos.offset().top-100, 800);
     });
   }
 });
@@ -220,8 +220,8 @@ $(".js-gallery-slider").each(function(){
 // var touchEvent = TOUCH_ENABLED ? "touchstart" : "click";
 
 //Trigger hamburger by touch on mobile - this eliminates glitch with FastClick.js
-$(".hamburger").removeClass('hide').bind("click", function() {
-
+$(".hamburger").removeClass('hide').bind("click", function(e) {
+    e.preventDefault();
     $("#off-canvas-menu").trigger("open.mm");
 });
 

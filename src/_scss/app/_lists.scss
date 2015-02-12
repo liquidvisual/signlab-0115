@@ -41,5 +41,9 @@ ul li {
 }
 
 //=========================================
-//
+// Foundation List Override
 //=========================================
+
+ol ol ul, ol ul ul, ul ol ul, ul ul ul {
+    list-style: circle;
+}

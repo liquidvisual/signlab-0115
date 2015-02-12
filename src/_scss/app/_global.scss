@@ -15,17 +15,15 @@ $page-padding: rem-calc(40) !default;
 //-----------------------------------------------------------------
 
 html, body {
+    height: auto;
+
     @media #{$small-only} {
-        font-size: 92%;
+        font-size: 86%;
     }
 }
 
 html {
     overflow-x: hidden;
-}
-
-ol ol ul, ol ul ul, ul ol ul, ul ul ul {
-    list-style: circle;
 }
 
 //=========================================

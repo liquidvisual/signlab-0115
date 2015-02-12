@@ -8,9 +8,17 @@
   url: "#"
   include_children_in_nav: true
   children:
-    - title: Service One
+    - title: 3-Dimensional Signage
       url: "/signage/#something"
-    - title: Service Two
+    - title: Composite Panel Signs
+      url: "/signage/#something"
+    - title: Illuminated and Neon Signage
+      url: "/signage/#something"
+    - title: "'A' Frame Signs"
+      url: "/signage/#something"
+    - title: "Shopfront & Building Signage"
+      url: "/signage/#something"
+    - title: "Safety OH&S Signs"
       url: "/signage/#something"
 
 - title: Banners

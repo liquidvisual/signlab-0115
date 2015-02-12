@@ -1,7 +1,7 @@
 /*
-    SPECIAL.CSS (shame.css)
+    SPECIAL.CSS
 
-    - Last updated: ^^^^^^^^
+    - Last updated: 13.02.15
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -20,12 +20,39 @@
 }
 
 //-----------------------------------------------------------------
+// MMenu - Jono Updates
+//-----------------------------------------------------------------
+
+.mm-list,
+.mm-list > li {
+	font-size: 16px;
+
+	@media #{$medium-up} {
+	    font-size: 18px;
+	}
+}
+
+.mm-list > li > a,
+.mm-list > li > span {
+	padding: rem-calc(12 10 12 20);
+
+	@media #{$medium-up} {
+	    padding: rem-calc(15 10 15 20);
+	}
+}
+
+//-----------------------------------------------------------------
 // Page Curl
 //-----------------------------------------------------------------
 
 .has-page-curl .img {
 	position: relative;
 	z-index: 1;
+
+	img {
+		border: 3px solid white;
+		border-radius: 2px;
+	}
 }
 
 .has-page-curl .img:after {
@@ -50,5 +77,16 @@
 }
 
 //=========================================
-//
+// Just Incase
 //=========================================
+
+// .mfp-wrap img.mfp-img {
+// 	border-radius: 2px;
+// 	padding: 2px;
+// 	background: white;
+// }
+
+// figure {
+// 	padding: 40px 0;
+// 	background: transparent;
+// }

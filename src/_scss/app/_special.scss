@@ -90,3 +90,14 @@
 // 	padding: 40px 0;
 // 	background: transparent;
 // }
+
+//-----------------------------------------------------------------
+// Has Image Bottom Aligned
+//-----------------------------------------------------------------
+
+.has-image-bottom-aligned .img {
+	@media #{$xxlarge-up} {
+		position: relative;
+	    top: rem-calc(90);
+	}
+}

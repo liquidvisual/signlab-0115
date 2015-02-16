@@ -24,7 +24,7 @@ module.exports = function (grunt) {
       app: 'src',
       dist: 'dist',
       assets: 'dist/assets',
-      port: '9292',
+      port: '9000',
       git: 'git@github.com:liquidvisual/signlab-0115.git',
       // IMPORTANT: Set a baseurl on line 364
     },

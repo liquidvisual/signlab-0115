@@ -172,6 +172,9 @@
 		 -webkit-background-clip: content;  /* Safari 4? Chrome 6? */
 		 background-clip: content-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
 
+		 &.opacity-show {
+		 	opacity: 1;
+		 }
 
 		.inner {
 		    position: relative;

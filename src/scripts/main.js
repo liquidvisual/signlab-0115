@@ -32,17 +32,13 @@ $('.lv-hero-module.collage-style .lv-hero li').each(function(){
   var allPanels = $('.collage-info-panel');
 
   $(this).click(function(){
+    var panelVisible = $('.collage-info-panel', $(this)).css('opacity') == 1;
 
-    // Allow user to toggle back and forth
+    allPanels.removeClass('opacity-show');
 
-    this.toggle = this.toggle ? false : true;
-    allPanels.css('opacity', 0);
-
-    if (!this.toggle) {
-      allPanels.css('opacity', 0);
-    } else {
-      $('.collage-info-panel', $(this)).css('opacity', 1);
-  }
+    if (!panelVisible) {
+      $('.collage-info-panel', $(this)).addClass('opacity-show');
+    }
   });
 });
 

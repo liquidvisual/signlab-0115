@@ -16,7 +16,7 @@ layout: master
 			<ul class="gallery-module">
 				{% assign gallery_image_count = 12 %}
 				{% for i in (1..gallery_image_count) %}
-					<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}}" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
+					<li class="{% if i > 8 %}hide excess{% endif %}"><a title="Gallery Item {{forloop.index}} <a href='#'>Example Link</a>" href="http://placehold.it/576x366"><img src="http://placehold.it/576x366"></a></li>
 				{% endfor %}
 			</ul>
 

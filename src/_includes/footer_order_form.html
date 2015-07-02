@@ -1,0 +1,19 @@
+{% assign settings = site.data.settings %}
+
+<!-- Footer Top -->
+<section id="contact" class="footer-top section fadeIn">
+	<div class="row outer-row">
+		<div class="columns">
+
+			<div class="headline">
+				<h2><i class="fa fa-phone"></i> {{ settings.phone }}</h2>
+				<h3 class="subheader">{{ settings.address }}</h3>
+			</div>
+
+			<h3>Request an order online</h3>
+			<br>
+			{% include order_form.html %}
+
+		</div> <!-- .columns -->
+	</div> <!-- .row -->
+</section>

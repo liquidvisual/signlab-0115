@@ -13,6 +13,8 @@ var TOUCH_ENABLED = $(".touch").length;
 
 $(document).ready(function() {
     NProgress.start(); // Start preloader bar
+
+    $('input, textarea').placeholder(); // IE9 Patch
 });
 
 $(window).load(function() {

@@ -1,0 +1,15 @@
+{% assign title = include.title %}
+
+<label>
+	<small>{{ title | upcase }}</small>
+	<div class="file-attachment">
+		<input name="{{ title }}" type="file" aria-label="File browser" placeholder="Upload" value="" multiple>
+	</div>
+</label>
+
+{% comment %}
+	<label class="fileX">
+		<input name="{{ title }}" type="file" aria-label="File browser" value="">
+		<span class="file-customX"></span>
+	</label>
+{% endcomment %}

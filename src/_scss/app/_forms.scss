@@ -1,7 +1,7 @@
 /*
     FORMS.CSS
 
-    - Last updated: ^^^^^^^^
+    - Last updated: 02.07.15
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -11,14 +11,59 @@
 // Forms
 //-----------------------------------------------------------------
 
+.lv-super input[type=date],
 .lv-super input[type=text],
 .lv-super input[type=email],
-.lv-super input[type=file],
+.lv-super .file-attachment,
+.lv-super select,
 .lv-super textarea {
 	padding: 20px;
 	height: rem-calc(70);
-	margin-bottom: rem-calc(30);
+	margin-bottom: rem-calc(15);
 }
+
+.lv-super form small {
+	font-size: rem-calc(11);
+	opacity: 0;
+}
+
+//=========================================
+// Checkbox
+//=========================================
+
+.lv-super .checkbox {
+	position: relative;
+	top: 15px;
+	// margin-bottom: rem-calc(30);
+}
+
+//=========================================
+// Select
+//=========================================
+
+.lv-super .select {
+	width: 100%;
+	border-radius: 0;
+	// margin-bottom: rem-calc(30);
+}
+
+.lv-super .select select {
+	background: #FAFAFA;
+	border: 2px solid #DEDEDE;
+}
+
+//=========================================
+// File
+//=========================================
+
+.lv-super .file {
+	width: 100%;
+	margin-bottom: rem-calc(10);
+}
+
+//=========================================
+// Textarea
+//=========================================
 
 .lv-super textarea {
 	height: rem-calc(134);
@@ -45,9 +90,9 @@
 // File Upload
 //=========================================
 
-.lv-super input[type=file] {
+.lv-super .file-attachment {
 	border: 2px solid #DEDEDE;
-	height: auto;
+	// height: auto;
 }
 
 .lt-ie10 input[type=file] {

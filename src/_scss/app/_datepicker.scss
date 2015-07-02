@@ -1,0 +1,172 @@
+/*
+    DATE PICKER.CSS
+
+    - Last updated: 20.11.14
+    - hello@liquidvisual.com
+
+    - Notes: dervied from JQuery UI light theme
+      jQuery UI - v1.11.2 - 2014-11-19
+*/
+//-----------------------------------------------------------------
+// Variables
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// JQuery UI Datepicker
+//-----------------------------------------------------------------
+
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.ui-datepicker {
+	width: 17em;
+	// padding: .2em .2em 0;
+	display: none;
+
+	// border-radius: 0;
+	 // box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.08);
+}
+
+.ui-datepicker-calendar {
+	border: 1px solid #CCCCCC;
+	border-top: 0;
+	background: white;
+}
+
+//=========================================
+// Header
+//=========================================
+
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+
+//=========================================
+// Select
+//=========================================
+
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+	background: none;
+	color: white;
+	border: 0;
+	padding: 0 10px;
+	height: 30px;
+	text-align: center;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 35%;
+}
+
+//=========================================
+// Header
+//=========================================
+
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	background: $primary-color;
+	border: 0;
+	color: white;
+	border-radius: $global-radius $global-radius 0 0;
+}
+
+.ui-datepicker-title {
+	padding: 5px 0;
+}
+
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+	// border-bottom: 2px solid #222;
+}
+
+.ui-datepicker thead {
+ 	border: 0;
+ 	color: grey;
+}
+
+//=========================================
+// Prev + Next
+//=========================================
+
+.ui-datepicker-next,
+.ui-datepicker-prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+
+	.ui-icon {
+		display: none;
+	}
+}
+
+.ui-datepicker-next {
+	left: auto;
+	right: 0;
+}
+
+.ui-datepicker-next:after,
+.ui-datepicker-prev:after {
+	font-family: "FontAwesome";
+	color: white;
+	display: block;
+	height: 100%;
+	padding: 10px;
+	// font-size: 22px;
+}
+
+.ui-datepicker-prev:after {
+	content: "\f053";
+}
+
+.ui-datepicker-next:after {
+	content: "\f054";
+}
+
+//=========================================
+// Day Blocks
+//=========================================
+
+.ui-datepicker td {
+	border: 0;
+	padding: 3px;
+	text-align: center; // center today bubble
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: center;
+	text-decoration: none;
+	color: $primary-color;
+}
+
+.ui-datepicker .ui-datepicker-today a {
+	display: inline-block;
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	width: 22px;
+	height: 22px;
+	text-align: center;
+	border-radius: 20px;
+	background: lighten($primary-color, 20%);
+}

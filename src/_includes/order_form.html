@@ -1,0 +1,122 @@
+<form action="/" id="order-form" method="post" novalidate="novalidate">
+
+	<!-- ************************** ROW ************************** -->
+
+	<div class="row">
+
+		<!-- Company Name -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Company name" %}
+		</div>
+
+		<!-- Your Name -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Your Name" %}
+		</div>
+
+		<!-- Phone -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Phone" %}
+		</div>
+
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<div class="row">
+
+		<!-- Order Number -->
+		<div class="large-6 columns">
+			{% include micro/input_text.html title="Order number" %}
+		</div>
+
+		<!-- Deceased Name -->
+		<div class="large-6 columns">
+			{% include micro/input_text.html title="Deceased name" %}
+		</div>
+
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+  	<div class="row">
+
+  		<!-- Size -->
+  		<div class="large-4 columns">
+  			{% include micro/select.html title="Size" %}
+  		</div>
+
+  		<!-- Theme -->
+  		<div class="large-4 columns">
+  			{% include micro/select.html title="Theme (optional)" %}
+  		</div>
+
+		<!-- Attach Images -->
+  		<div class="large-4 columns">
+  			{% include micro/input_file.html title="Attach images" %}
+  		</div>
+
+  	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<!-- Personalised Message -->
+    <div class="row hide">
+		<div class="columns">
+			{% include micro/textarea.html title="Personalised Message" %}
+		</div>
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<div class="row">
+
+		<!-- Date Needed -->
+		<div class="large-4 columns">
+            {% include micro/input_date.html title="Date Needed" %}
+		</div>
+
+		<!-- Delivery -->
+		<div class="large-4 columns">
+            {% include micro/checkbox.html title="Delivery" %}
+            <br><br>
+
+				<!-- ************ ROW ************ -->
+
+				<!-- Delivery Address -->
+			    <div class="row hide">
+					<div class="columns">
+						{% include micro/textarea.html title="Delivery address" %}
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Personalised Message -->
+		<div class="large-4 columns">
+        	{% include micro/checkbox.html title="Personalised message" %}
+			<br><br>
+
+				<!-- ************ ROW ************ -->
+
+				<!-- Message -->
+        	    <div class="row hide">
+        			<div class="columns">
+        				{% include micro/textarea.html title="Personalised Message" %}
+        			</div>
+        		</div>
+		</div>
+
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<!-- Submit -->
+	<div class="row">
+		<div class="columns text-center medium-text-right">
+			<br class="show-for-small-only">
+			{% include micro/input_submit.html title="Submit Request" %}
+		</div>
+	</div>
+
+</form>

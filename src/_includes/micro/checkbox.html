@@ -1,0 +1,8 @@
+{% assign title = include.title %}
+
+<label class="control checkbox">
+	<input id="{{ title | slugify }}" type="checkbox" name="{{ title }}" data-val="true" data-val-required="The {{ title }} field is required." value="true">
+	<input name="{{ title }}" type="hidden" value="false">
+	<span class="control-indicator"></span>
+	{{ title }}
+</label>

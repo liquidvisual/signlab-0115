@@ -1,12 +1,15 @@
 /*
     FORMS.CSS
 
-    - Last updated: 02.07.15
+    - Last updated: 03.07.15
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
+
+$grey-border-color: #DEDEDE;
+
 //-----------------------------------------------------------------
 // Forms
 //-----------------------------------------------------------------
@@ -19,22 +22,12 @@
 .lv-super textarea {
 	padding: 20px;
 	height: rem-calc(70);
-	margin-bottom: rem-calc(15);
+	margin-bottom: rem-calc(30);
 }
 
 .lv-super form small {
 	font-size: rem-calc(11);
 	opacity: 0;
-}
-
-//=========================================
-// Checkbox
-//=========================================
-
-.lv-super .checkbox {
-	position: relative;
-	top: 15px;
-	// margin-bottom: rem-calc(30);
 }
 
 //=========================================
@@ -44,21 +37,34 @@
 .lv-super .select {
 	width: 100%;
 	border-radius: 0;
-	// margin-bottom: rem-calc(30);
+	margin-bottom: rem-calc(30);
 }
 
 .lv-super .select select {
 	background: #FAFAFA;
-	border: 2px solid #DEDEDE;
+	border: 2px solid $grey-border-color;
+}
+
+//=========================================
+// Checkbox
+//=========================================
+
+.checkbox {
+	@extend .lv-unselectable;
+	margin-bottom: rem-calc(40);
+
+	&.has-open-dropdown {
+		margin-bottom: -20px;
+	}
 }
 
 //=========================================
 // File
 //=========================================
 
-.lv-super .file {
+.file {
 	width: 100%;
-	margin-bottom: rem-calc(10);
+	margin-bottom: 0;
 }
 
 //=========================================
@@ -91,13 +97,34 @@
 //=========================================
 
 .lv-super .file-attachment {
-	border: 2px solid #DEDEDE;
+	border: 2px solid $grey-border-color;
+	margin-bottom: 0;
 	// height: auto;
+}
+
+.lv-super .file-attachment-box {
+	border-top: 1px solid $grey-border-color;
+	border-bottom: 1px solid $grey-border-color;
+	margin-bottom: rem-calc(20);
+	padding: rem-calc(20 0);
+
+	p {
+		margin-bottom: rem-calc(20);
+
+		@media #{$large-up} {
+		    line-height: rem-calc(70);
+		    margin-bottom: 0;
+		}
+	}
 }
 
 .lt-ie10 input[type=file] {
 	padding: 0;
 }
+
+//=========================================
+// Newsletter
+//=========================================
 
 .input-newsletter {
 	margin-bottom: rem-calc(30);
@@ -109,5 +136,9 @@
 }
 
 //=========================================
-//
+// Form Dropdown - controlled by checkboxes
 //=========================================
+
+// .form-dropdown
+
+

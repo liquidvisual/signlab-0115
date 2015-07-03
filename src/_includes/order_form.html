@@ -1,3 +1,19 @@
+<!-- Checkbox JQuery - Open Dropdowns -->
+<script>
+	window.onload = function(){
+		$('.checkbox').click(function() {
+			var checked = $('input[type=checkbox]', $(this)).prop('checked');
+		    if (!checked) {
+		    	$(this).removeClass('has-open-dropdown').next('.form-dropdown').addClass('hide').removeClass('animated fadeIn');
+		    } else {
+		    	$(this).addClass('has-open-dropdown').next('.form-dropdown').removeClass('hide').addClass('animated fadeIn');
+		    }
+		});
+	}
+</script>
+
+<!-- ORDER FORM -->
+
 <form action="/" id="order-form" method="post" novalidate="novalidate">
 
 	<!-- ************************** ROW ************************** -->
@@ -51,10 +67,10 @@
   			{% include micro/select.html title="Theme (optional)" %}
   		</div>
 
-		<!-- Attach Images -->
-  		<div class="large-4 columns">
-  			{% include micro/input_file.html title="Attach images" %}
-  		</div>
+		<!-- Date Needed -->
+		<div class="large-4 columns">
+            {% include micro/input_date.html title="Date Needed" %}
+		</div>
 
   	</div>
 
@@ -71,42 +87,59 @@
 
 	<div class="row">
 
-		<!-- Date Needed -->
-		<div class="large-4 columns">
-            {% include micro/input_date.html title="Date Needed" %}
-		</div>
-
 		<!-- Delivery -->
 		<div class="large-4 columns">
             {% include micro/checkbox.html title="Delivery" %}
-            <br><br>
 
 				<!-- ************ ROW ************ -->
 
 				<!-- Delivery Address -->
-			    <div class="row hide">
-					<div class="columns">
-						{% include micro/textarea.html title="Delivery address" %}
+				<div class="form-dropdown hide">
+				    <div class="row">
+						<div class="columns">
+							{% include micro/textarea.html title="Delivery address" %}
+						</div>
 					</div>
 				</div>
 
 		</div>
 
 		<!-- Personalised Message -->
-		<div class="large-4 columns">
+		<div class="large-4 end columns">
         	{% include micro/checkbox.html title="Personalised message" %}
-			<br><br>
 
 				<!-- ************ ROW ************ -->
 
 				<!-- Message -->
-        	    <div class="row hide">
-        			<div class="columns">
-        				{% include micro/textarea.html title="Personalised Message" %}
-        			</div>
+				<div class="form-dropdown hide">
+	        	    <div class="row">
+	        			<div class="columns">
+	        				{% include micro/textarea.html title="Personalised Message" %}
+	        			</div>
+	        		</div>
         		</div>
 		</div>
 
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<div class="row">
+		<div class="columns">
+
+			<!-- File Attachment Boxw -->
+			<div class="file-attachment-box">
+				<div class="row collapse">
+					<div class="medium-3 large-2 columns">
+						<p>Upload Images</p>
+					</div>
+			  		<div class="medium-5 large-4 end columns">
+			  			{% include micro/input_file.html title="Attach images" %}
+			  		</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 	<!-- ************************** ROW ************************** -->

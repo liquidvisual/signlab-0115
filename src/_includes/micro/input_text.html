@@ -1,7 +1,6 @@
 {% assign title = include.title %}
 
 <label>
-	<small>{{ title | upcase }}</small>
 	<input data-val="true" data-val-required="The {{ title }} field is required." id="{{ title | slugify }}" name="{{ title }}" placeholder="{{ title }} (required)" type="text" value="">
 </label>
 

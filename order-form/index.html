@@ -229,7 +229,6 @@
 			
 
 <label>
-	<small>COMPANY NAME</small>
 	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" />
 </label>
 
@@ -241,7 +240,6 @@
 			
 
 <label>
-	<small>YOUR NAME</small>
 	<input data-val="true" data-val-required="The Your Name field is required." id="your-name" name="Your Name" placeholder="Your Name (required)" type="text" value="" />
 </label>
 
@@ -253,7 +251,6 @@
 			
 
 <label>
-	<small>PHONE</small>
 	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" />
 </label>
 
@@ -271,7 +268,6 @@
 			
 
 <label>
-	<small>ORDER NUMBER</small>
 	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" />
 </label>
 
@@ -283,7 +279,6 @@
 			
 
 <label>
-	<small>DECEASED NAME</small>
 	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" />
 </label>
 
@@ -301,7 +296,6 @@
   			
 
 <label>
-	<small>SIZE</small>
 	<div class="select">
 		<select name="Size" id="size">
 			<option selected="" disabled="">Size</option>
@@ -320,7 +314,6 @@
   			
 
 <label>
-	<small>THEME (OPTIONAL)</small>
 	<div class="select">
 		<select name="Theme (optional)" id="theme-optional">
 			<option selected="" disabled="">Theme (optional)</option>
@@ -334,19 +327,14 @@
 <span class="field-validation-valid error" data-valmsg-for="theme-optional" data-valmsg-replace="true"></span>
   		</div>
 
-		<!-- Attach Images -->
-  		<div class="large-4 columns">
-  			
+		<!-- Date Needed -->
+		<div class="large-4 columns">
+            
 
 <label>
-	<small>ATTACH IMAGES</small>
-	<div class="file-attachment">
-		<input name="Attach images" type="file" aria-label="File browser" placeholder="Upload" value="" multiple="" />
-	</div>
+	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date Needed" />
 </label>
-
-
-  		</div>
+		</div>
 
   	</div>
 
@@ -367,69 +355,87 @@
 
 	<div class="row">
 
-		<!-- Date Needed -->
-		<div class="large-4 columns">
-            
-
-<label>
-	<small>DATE NEEDED</small>
-	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date Needed" />
-</label>
-		</div>
-
 		<!-- Delivery -->
 		<div class="large-4 columns">
             
 
-<label class="control checkbox">
-	<input id="delivery" type="checkbox" name="Delivery" data-val="true" data-val-required="The Delivery field is required." value="true" />
+<label class="checkbox">
+	<input id="delivery" type="checkbox" name="Delivery" data-val="true" data-val-required="The Delivery field is required." />
 	<input name="Delivery" type="hidden" value="false" />
-	<span class="control-indicator"></span>
 	Delivery
 </label>
-            <br /><br />
 
 				<!-- ************ ROW ************ -->
 
 				<!-- Delivery Address -->
-			    <div class="row hide">
-					<div class="columns">
-						
+				<div class="form-dropdown hide">
+				    <div class="row">
+						<div class="columns">
+							
 
 <small>DELIVERY ADDRESS</small>
 <textarea cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" placeholder="Delivery address (required)"></textarea>
 <span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true"></span>
+						</div>
 					</div>
 				</div>
 
 		</div>
 
 		<!-- Personalised Message -->
-		<div class="large-4 columns">
+		<div class="large-4 end columns">
         	
 
-<label class="control checkbox">
-	<input id="personalised-message" type="checkbox" name="Personalised message" data-val="true" data-val-required="The Personalised message field is required." value="true" />
+<label class="checkbox">
+	<input id="personalised-message" type="checkbox" name="Personalised message" data-val="true" data-val-required="The Personalised message field is required." />
 	<input name="Personalised message" type="hidden" value="false" />
-	<span class="control-indicator"></span>
 	Personalised message
 </label>
-			<br /><br />
 
 				<!-- ************ ROW ************ -->
 
 				<!-- Message -->
-        	    <div class="row hide">
-        			<div class="columns">
-        				
+				<div class="form-dropdown hide">
+	        	    <div class="row">
+	        			<div class="columns">
+	        				
 
 <small>PERSONALISED MESSAGE</small>
 <textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)"></textarea>
 <span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true"></span>
-        			</div>
+	        			</div>
+	        		</div>
         		</div>
 		</div>
 
+	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<div class="row">
+		<div class="columns">
+
+			<!-- File Attachment Boxw -->
+			<div class="file-attachment-box">
+				<div class="row collapse">
+					<div class="medium-3 large-2 columns">
+						<p>Upload Images</p>
+					</div>
+			  		<div class="medium-5 large-4 end columns">
+			  			
+
+<label>
+	<div class="file-attachment">
+		<input name="Attach images" type="file" aria-label="File browser" placeholder="Upload" value="" multiple="" />
+	</div>
+</label>
+
+
+			  		</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 
 	<!-- ************************** ROW ************************** -->

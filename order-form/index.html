@@ -218,7 +218,23 @@
 
 			<h3>Request an order online</h3>
 			<br />
-			<form action="/" id="order-form" method="post" novalidate="novalidate">
+			<!-- Checkbox JQuery - Open Dropdowns -->
+<script>
+	window.onload = function(){
+		$('.checkbox').click(function() {
+			var checked = $('input[type=checkbox]', $(this)).prop('checked');
+		    if (!checked) {
+		    	$(this).removeClass('has-open-dropdown').next('.form-dropdown').addClass('hide').removeClass('animated fadeIn');
+		    } else {
+		    	$(this).addClass('has-open-dropdown').next('.form-dropdown').removeClass('hide').addClass('animated fadeIn');
+		    }
+		});
+	}
+</script>
+
+<!-- ORDER FORM -->
+
+<form action="/" id="order-form" method="post" novalidate="novalidate">
 
 	<!-- ************************** ROW ************************** -->
 

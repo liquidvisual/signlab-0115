@@ -1,7 +1,7 @@
 {% assign title = include.title %}
 
 <label>
-	<input data-val="true" data-val-required="The {{ title }} field is required." id="{{ title | slugify }}" name="{{ title }}" placeholder="{{ title }} (required)" type="text" value="">
+	<input data-val="true" data-val-required="The {{ title }} field is required." id="{{ title | slugify }}" name="{{ title }}" placeholder="{{ title }} (required)" type="text" value="" required>
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true">{{ title }} is required.</span>

@@ -234,7 +234,7 @@
 
 <!-- ORDER FORM -->
 
-<form action="/" id="order-form" method="post" novalidate="novalidate">
+<form data-abide="" action="/" id="order-form" method="post" novalidate="novalidate">
 
 	<!-- ************************** ROW ************************** -->
 
@@ -245,10 +245,10 @@
 			
 
 <label>
-	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" />
+	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="company-name" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="company-name" data-valmsg-replace="true">Company name is required.</span>
 		</div>
 
 		<!-- Your Name -->
@@ -256,10 +256,10 @@
 			
 
 <label>
-	<input data-val="true" data-val-required="The Your Name field is required." id="your-name" name="Your Name" placeholder="Your Name (required)" type="text" value="" />
+	<input data-val="true" data-val-required="The Your Name field is required." id="your-name" name="Your Name" placeholder="Your Name (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="your-name" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="your-name" data-valmsg-replace="true">Your Name is required.</span>
 		</div>
 
 		<!-- Phone -->
@@ -267,10 +267,10 @@
 			
 
 <label>
-	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" />
+	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="phone" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="phone" data-valmsg-replace="true">Phone is required.</span>
 		</div>
 
 	</div>
@@ -284,10 +284,10 @@
 			
 
 <label>
-	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" />
+	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="order-number" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="order-number" data-valmsg-replace="true">Order number is required.</span>
 		</div>
 
 		<!-- Deceased Name -->
@@ -295,10 +295,10 @@
 			
 
 <label>
-	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" />
+	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="deceased-name" data-valmsg-replace="true"></span>
+<span class="field-validation-valid error" data-valmsg-for="deceased-name" data-valmsg-replace="true">Deceased name is required.</span>
 		</div>
 
 	</div>
@@ -348,7 +348,7 @@
             
 
 <label>
-	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date Needed" />
+	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date Needed" pattern="/*" />
 </label>
 		</div>
 
@@ -362,8 +362,9 @@
 			
 
 <small>PERSONALISED MESSAGE</small>
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)"></textarea>
-<span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true"></span>
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)" required=""></textarea>
+
+<span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true">Your Personalised Message is required.</span>
 		</div>
 	</div>
 
@@ -390,8 +391,9 @@
 							
 
 <small>DELIVERY ADDRESS</small>
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" placeholder="Delivery address (required)"></textarea>
-<span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true"></span>
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" placeholder="Delivery address (required)" required=""></textarea>
+
+<span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true">Your Delivery address is required.</span>
 						</div>
 					</div>
 				</div>
@@ -417,8 +419,9 @@
 	        				
 
 <small>PERSONALISED MESSAGE</small>
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)"></textarea>
-<span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true"></span>
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)" required=""></textarea>
+
+<span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true">Your Personalised Message is required.</span>
 	        			</div>
 	        		</div>
         		</div>

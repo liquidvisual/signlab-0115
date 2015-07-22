@@ -19,7 +19,8 @@ $grey-border-color: #DEDEDE;
 .lv-super input[type=email],
 .lv-super .file-attachment,
 .lv-super select,
-.lv-super textarea {
+.lv-super textarea,
+.lv-super .file-attachment-box textarea {
 	padding: 20px;
 	height: rem-calc(70);
 	margin-bottom: rem-calc(30);
@@ -49,13 +50,18 @@ $grey-border-color: #DEDEDE;
 // Checkbox
 //=========================================
 
+.radio,
 .checkbox {
 	@extend .lv-unselectable;
 	margin-bottom: rem-calc(40);
 
 	&.has-open-dropdown {
-		margin-bottom: -20px;
+		margin-bottom: 0;
 	}
+}
+
+.radio {
+	margin-bottom: rem-calc(20);
 }
 
 //=========================================
@@ -73,6 +79,14 @@ $grey-border-color: #DEDEDE;
 
 .lv-super textarea {
 	height: rem-calc(134);
+}
+
+//=========================================
+// Dropdown Delivery - special case
+//=========================================
+
+[data-dropdown="delivery"] {
+	margin-top: -40px;
 }
 
 //=========================================
@@ -98,8 +112,10 @@ $grey-border-color: #DEDEDE;
 
 .lv-super .file-attachment {
 	border: 2px solid $grey-border-color;
-	margin-bottom: 0;
-	// height: auto;
+
+	@media #{$large-up} {
+	    margin-bottom: 0;
+	}
 }
 
 .lv-super .file-attachment-box {
@@ -115,6 +131,11 @@ $grey-border-color: #DEDEDE;
 		    line-height: rem-calc(70);
 		    margin-bottom: 0;
 		}
+	}
+
+	.file-attachment-box-note {
+		font-size: rem-calc(14);
+		color: #222;
 	}
 }
 

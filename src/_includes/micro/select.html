@@ -3,7 +3,7 @@
 <label>
 	<div class="select">
 		<select name="{{ title }}" id="{{ title | slugify }}">
-			<option selected disabled>{{ title }}</option>
+			<option selected disabled>{{ title }} {% if required %}(required){% endif %}</option>
 			<option value="Option 1">Option 1</option>
 			<option value="Option 2">Option 2</option>
 			<option value="Option 3">Option 3</option>

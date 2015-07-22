@@ -8,16 +8,33 @@
 // Controls checkbox dropdowns
 //-----------------------------------------------------------------
 
-// $('.checkbox').click(function() {
+// $('.checkbox, .radio').each(function(){
+// 	var $this = $(this);
+// 	$this.click(function() {
+// 		setForm($(this));
+// 	});
+// 	setForm($(this));
+// });
 
-// 	var checked = $('input[type=checkbox]', $(this)).prop('checked');
+// // setForm
+// function setForm(target) {
+// 	var $this = target;
+// 	var id = $this.find('input').attr('id');
+// 	var checked = $('input', $this).prop('checked');
+// 	var dropdown = $('[data-dropdown='+id+']');
 
 //     if (!checked) {
-//     	$(this).removeClass('has-open-dropdown').next('.form-dropdown').addClass('hide').removeClass('animated fadeIn');
+//     	// Hide dropdown
+//     	dropdown.addClass('hide').removeClass('animated fadeIn');
 //     } else {
-//     	$(this).addClass('has-open-dropdown').next('.form-dropdown').removeClass('hide').addClass('animated fadeIn');
+//     	// If Radio - hide all groups
+//     	if ($this.hasClass('radio')) {
+//     		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
+//     	}
+//     	// Show dropdown
+//     	dropdown.removeClass('hide').addClass('animated fadeIn');
 //     }
-// });
+// }
 
 //-----------------------------------------------------------------
 //

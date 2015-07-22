@@ -1,14 +1,35 @@
 <!-- Checkbox JQuery - Open Dropdowns -->
 <script>
 	window.onload = function(){
-		$('.checkbox').click(function() {
-			var checked = $('input[type=checkbox]', $(this)).prop('checked');
-		    if (!checked) {
-		    	$(this).removeClass('has-open-dropdown').next('.form-dropdown').addClass('hide').removeClass('animated fadeIn');
-		    } else {
-		    	$(this).addClass('has-open-dropdown').next('.form-dropdown').removeClass('hide').addClass('animated fadeIn');
-		    }
+		// Loop through inputs, setup triggers
+		$('.checkbox, .radio').each(function(){
+			var $this = $(this);
+			$this.click(function() {
+				setForm($(this));
+			});
+			// setup triggers to preserve for refresh
+			setForm($(this));
 		});
+
+		// setForm
+		function setForm(target) {
+			var $this = target;
+			var id = $this.find('input').attr('id');
+			var checked = $('input', $this).prop('checked');
+			var dropdown = $('[data-dropdown='+id+']');
+
+		    if (!checked) {
+		    	// Hide dropdown
+		    	dropdown.addClass('hide').removeClass('animated fadeIn');
+		    } else {
+		    	// If Radio - hide all groups
+		    	if ($this.hasClass('radio')) {
+		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
+		    	}
+		    	// Show dropdown
+		    	dropdown.removeClass('hide').addClass('animated fadeIn');
+		    }
+		}
 	}
 </script>
 
@@ -22,17 +43,17 @@
 
 		<!-- Company Name -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Company name" %}
+			{% include micro/input_text.html title="Company name" required=true %}
 		</div>
 
 		<!-- Your Name -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Your Name" %}
+			{% include micro/input_text.html title="Name" required=true %}
 		</div>
 
 		<!-- Phone -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Phone" %}
+			{% include micro/input_text.html title="Phone" required=true %}
 		</div>
 
 	</div>
@@ -41,14 +62,19 @@
 
 	<div class="row">
 
+		<!-- Email -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Email" required=true %}
+		</div>
+
 		<!-- Order Number -->
-		<div class="large-6 columns">
-			{% include micro/input_text.html title="Order number" %}
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Order number" required=true %}
 		</div>
 
 		<!-- Deceased Name -->
-		<div class="large-6 columns">
-			{% include micro/input_text.html title="Deceased name" %}
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Deceased name" required=true %}
 		</div>
 
 	</div>
@@ -59,17 +85,29 @@
 
   		<!-- Size -->
   		<div class="large-4 columns">
-  			{% include micro/select.html title="Size" %}
-  		</div>
-
-  		<!-- Theme -->
-  		<div class="large-4 columns">
-  			{% include micro/select.html title="Theme (optional)" %}
+  			{% include micro/select.html title="Size" required=true %}
   		</div>
 
 		<!-- Date Needed -->
 		<div class="large-4 columns">
             {% include micro/input_date.html title="Date Needed" %}
+		</div>
+
+		<!-- Delivery -->
+		<div class="large-4 columns">
+            {% include micro/checkbox.html title="Delivery" %}
+
+			<!-- ************ ROW ************ -->
+
+			<!-- Delivery Address -->
+			<div data-dropdown="delivery" class="hide">
+			    <div class="row">
+					<div class="columns">
+						{% include micro/textarea.html title="Delivery address" %}
+					</div>
+				</div>
+			</div>
+
 		</div>
 
   	</div>
@@ -87,60 +125,69 @@
 
 	<div class="row">
 
-		<!-- Delivery -->
+		<!-- Select Theme -->
 		<div class="large-4 columns">
-            {% include micro/checkbox.html title="Delivery" %}
+        	{% include micro/radio.html title="Select theme" group="theme-or-personalised" %}
 
-				<!-- ************ ROW ************ -->
+			<!-- ************ ROW ************ -->
 
-				<!-- Delivery Address -->
-				<div class="form-dropdown hide">
-				    <div class="row">
-						<div class="columns">
-							{% include micro/textarea.html title="Delivery address" %}
-						</div>
-					</div>
-				</div>
-
+			<!-- Personalised Message -->
+			<div data-dropdown="select-theme" class="hide">
+        	    <div class="row">
+        			<div class="columns">
+        				{% include micro/select.html title="Theme" %}
+        			</div>
+        		</div>
+    		</div>
 		</div>
 
-		<!-- Personalised Message -->
+		<!-- Personalised -->
 		<div class="large-4 end columns">
-        	{% include micro/checkbox.html title="Personalised message" %}
-
-				<!-- ************ ROW ************ -->
-
-				<!-- Message -->
-				<div class="form-dropdown hide">
-	        	    <div class="row">
-	        			<div class="columns">
-	        				{% include micro/textarea.html title="Personalised Message" %}
-	        			</div>
-	        		</div>
-        		</div>
+        	{% include micro/radio.html title="Personalised" group="theme-or-personalised" %}
 		</div>
 
 	</div>
 
 	<!-- ************************** ROW ************************** -->
 
-	<div class="row">
-		<div class="columns">
+	<div data-dropdown="personalised" class="file-attachment-box hide">
+		<div class="row">
+			<div class="large-6 columns">
 
-			<!-- File Attachment Boxw -->
-			<div class="file-attachment-box">
-				<div class="row collapse">
-					<div class="medium-3 large-2 columns">
+				<!-- Upload Images -->
+				<div class="row">
+					<div class="medium-3 large-4 columns">
 						<p>Upload Images</p>
 					</div>
-			  		<div class="medium-5 large-4 end columns">
+			  		<div class="medium-9 large-7 end columns">
 			  			{% include micro/input_file.html title="Attach images" %}
 			  		</div>
 				</div>
-			</div>
 
+			</div>
+			<div class="large-6 columns">
+
+				<!-- Message -->
+				<div class="row">
+					<div class="medium-3 columns">
+						<p>Message</p>
+					</div>
+			  		<div class="medium-9 columns">
+
+	  					<!-- Personalised Message -->
+	  					<div class="form-dropdown">
+	  			    		{% include micro/input_text_no_placeholder.html title="Message" required=true %}
+	  					</div>
+
+			  		</div>
+				</div>
+
+			</div>
 		</div>
-	</div>
+
+		<span class="file-attachment-box-note">Please be patient when submitting the form and uploading files</span>
+
+	</div> <!-- file-attachment-box -->
 
 	<!-- ************************** ROW ************************** -->
 

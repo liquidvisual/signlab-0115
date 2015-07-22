@@ -221,14 +221,35 @@
 			<!-- Checkbox JQuery - Open Dropdowns -->
 <script>
 	window.onload = function(){
-		$('.checkbox').click(function() {
-			var checked = $('input[type=checkbox]', $(this)).prop('checked');
-		    if (!checked) {
-		    	$(this).removeClass('has-open-dropdown').next('.form-dropdown').addClass('hide').removeClass('animated fadeIn');
-		    } else {
-		    	$(this).addClass('has-open-dropdown').next('.form-dropdown').removeClass('hide').addClass('animated fadeIn');
-		    }
+		// Loop through inputs, setup triggers
+		$('.checkbox, .radio').each(function(){
+			var $this = $(this);
+			$this.click(function() {
+				setForm($(this));
+			});
+			// setup triggers to preserve for refresh
+			setForm($(this));
 		});
+
+		// setForm
+		function setForm(target) {
+			var $this = target;
+			var id = $this.find('input').attr('id');
+			var checked = $('input', $this).prop('checked');
+			var dropdown = $('[data-dropdown='+id+']');
+
+		    if (!checked) {
+		    	// Hide dropdown
+		    	dropdown.addClass('hide').removeClass('animated fadeIn');
+		    } else {
+		    	// If Radio - hide all groups
+		    	if ($this.hasClass('radio')) {
+		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
+		    	}
+		    	// Show dropdown
+		    	dropdown.removeClass('hide').addClass('animated fadeIn');
+		    }
+		}
 	}
 </script>
 
@@ -244,6 +265,7 @@
 		<div class="large-4 columns">
 			
 
+
 <label>
 	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" required="" />
 </label>
@@ -255,16 +277,18 @@
 		<div class="large-4 columns">
 			
 
+
 <label>
-	<input data-val="true" data-val-required="The Your Name field is required." id="your-name" name="Your Name" placeholder="Your Name (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Name field is required." id="name" name="Name" placeholder="Name (required)" type="text" value="" required="" />
 </label>
 
-<span class="field-validation-valid error" data-valmsg-for="your-name" data-valmsg-replace="true">Your Name is required.</span>
+<span class="field-validation-valid error" data-valmsg-for="name" data-valmsg-replace="true">Name is required.</span>
 		</div>
 
 		<!-- Phone -->
 		<div class="large-4 columns">
 			
+
 
 <label>
 	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" required="" />
@@ -279,9 +303,22 @@
 
 	<div class="row">
 
-		<!-- Order Number -->
-		<div class="large-6 columns">
+		<!-- Email -->
+		<div class="large-4 columns">
 			
+
+
+<label>
+	<input data-val="true" data-val-required="The Email field is required." id="email" name="Email" placeholder="Email (required)" type="text" value="" required="" />
+</label>
+
+<span class="field-validation-valid error" data-valmsg-for="email" data-valmsg-replace="true">Email is required.</span>
+		</div>
+
+		<!-- Order Number -->
+		<div class="large-4 columns">
+			
+
 
 <label>
 	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" required="" />
@@ -291,8 +328,9 @@
 		</div>
 
 		<!-- Deceased Name -->
-		<div class="large-6 columns">
+		<div class="large-4 columns">
 			
+
 
 <label>
 	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" required="" />
@@ -314,7 +352,7 @@
 <label>
 	<div class="select">
 		<select name="Size" id="size">
-			<option selected="" disabled="">Size</option>
+			<option selected="" disabled="">Size (required)</option>
 			<option value="Option 1">Option 1</option>
 			<option value="Option 2">Option 2</option>
 			<option value="Option 3">Option 3</option>
@@ -325,31 +363,41 @@
 <span class="field-validation-valid error" data-valmsg-for="size" data-valmsg-replace="true"></span>
   		</div>
 
-  		<!-- Theme -->
-  		<div class="large-4 columns">
-  			
-
-<label>
-	<div class="select">
-		<select name="Theme (optional)" id="theme-optional">
-			<option selected="" disabled="">Theme (optional)</option>
-			<option value="Option 1">Option 1</option>
-			<option value="Option 2">Option 2</option>
-			<option value="Option 3">Option 3</option>
-		</select>
-	</div>
-</label>
-
-<span class="field-validation-valid error" data-valmsg-for="theme-optional" data-valmsg-replace="true"></span>
-  		</div>
-
 		<!-- Date Needed -->
 		<div class="large-4 columns">
             
 
 <label>
-	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date Needed" pattern="/*" />
+	<input class="ui-datepicker" name="Date Needed" type="text" placeholder="Date needed (required)" pattern="/*" />
 </label>
+		</div>
+
+		<!-- Delivery -->
+		<div class="large-4 columns">
+            
+
+
+<label class="checkbox">
+	<input id="delivery" type="checkbox" name="Delivery" data-val="true" data-val-required="The Delivery field is required." />
+	<input name="Delivery" type="hidden" value="false" />
+	Delivery
+</label>
+
+			<!-- ************ ROW ************ -->
+
+			<!-- Delivery Address -->
+			<div data-dropdown="delivery" class="hide">
+			    <div class="row">
+					<div class="columns">
+						
+
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" placeholder="Delivery address (required)" required=""></textarea>
+
+<span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true">Your Delivery address is required.</span>
+					</div>
+				</div>
+			</div>
+
 		</div>
 
   	</div>
@@ -361,7 +409,6 @@
 		<div class="columns">
 			
 
-<small>PERSONALISED MESSAGE</small>
 <textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)" required=""></textarea>
 
 <span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true">Your Personalised Message is required.</span>
@@ -372,75 +419,68 @@
 
 	<div class="row">
 
-		<!-- Delivery -->
+		<!-- Select Theme -->
 		<div class="large-4 columns">
-            
+        	
 
-<label class="checkbox">
-	<input id="delivery" type="checkbox" name="Delivery" data-val="true" data-val-required="The Delivery field is required." />
-	<input name="Delivery" type="hidden" value="false" />
-	Delivery
+
+<label class="radio">
+	<input id="select-theme" type="radio" name="theme-or-personalised" data-val="true" data-val-required="The Select theme field is required." />
+	<input name="theme-or-personalised" type="hidden" value="false" />
+	Select theme
 </label>
 
-				<!-- ************ ROW ************ -->
+			<!-- ************ ROW ************ -->
 
-				<!-- Delivery Address -->
-				<div class="form-dropdown hide">
-				    <div class="row">
-						<div class="columns">
-							
+			<!-- Personalised Message -->
+			<div data-dropdown="select-theme" class="hide">
+        	    <div class="row">
+        			<div class="columns">
+        				
 
-<small>DELIVERY ADDRESS</small>
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" placeholder="Delivery address (required)" required=""></textarea>
+<label>
+	<div class="select">
+		<select name="Theme" id="theme">
+			<option selected="" disabled="">Theme (required)</option>
+			<option value="Option 1">Option 1</option>
+			<option value="Option 2">Option 2</option>
+			<option value="Option 3">Option 3</option>
+		</select>
+	</div>
+</label>
 
-<span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true">Your Delivery address is required.</span>
-						</div>
-					</div>
-				</div>
-
+<span class="field-validation-valid error" data-valmsg-for="theme" data-valmsg-replace="true"></span>
+        			</div>
+        		</div>
+    		</div>
 		</div>
 
-		<!-- Personalised Message -->
+		<!-- Personalised -->
 		<div class="large-4 end columns">
         	
 
-<label class="checkbox">
-	<input id="personalised-message" type="checkbox" name="Personalised message" data-val="true" data-val-required="The Personalised message field is required." />
-	<input name="Personalised message" type="hidden" value="false" />
-	Personalised message
+
+<label class="radio">
+	<input id="personalised" type="radio" name="theme-or-personalised" data-val="true" data-val-required="The Personalised field is required." />
+	<input name="theme-or-personalised" type="hidden" value="false" />
+	Personalised
 </label>
-
-				<!-- ************ ROW ************ -->
-
-				<!-- Message -->
-				<div class="form-dropdown hide">
-	        	    <div class="row">
-	        			<div class="columns">
-	        				
-
-<small>PERSONALISED MESSAGE</small>
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" placeholder="Personalised Message (required)" required=""></textarea>
-
-<span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true">Your Personalised Message is required.</span>
-	        			</div>
-	        		</div>
-        		</div>
 		</div>
 
 	</div>
 
 	<!-- ************************** ROW ************************** -->
 
-	<div class="row">
-		<div class="columns">
+	<div data-dropdown="personalised" class="file-attachment-box hide">
+		<div class="row">
+			<div class="large-6 columns">
 
-			<!-- File Attachment Boxw -->
-			<div class="file-attachment-box">
-				<div class="row collapse">
-					<div class="medium-3 large-2 columns">
+				<!-- Upload Images -->
+				<div class="row">
+					<div class="medium-3 large-4 columns">
 						<p>Upload Images</p>
 					</div>
-			  		<div class="medium-5 large-4 end columns">
+			  		<div class="medium-9 large-7 end columns">
 			  			
 
 <label>
@@ -452,10 +492,38 @@
 
 			  		</div>
 				</div>
-			</div>
 
+			</div>
+			<div class="large-6 columns">
+
+				<!-- Message -->
+				<div class="row">
+					<div class="medium-3 columns">
+						<p>Message</p>
+					</div>
+			  		<div class="medium-9 columns">
+
+	  					<!-- Personalised Message -->
+	  					<div class="form-dropdown">
+	  			    		
+
+
+<label>
+	<input data-val="true" data-val-required="The Message field is required." id="message" name="Message" type="text" value="" required="" />
+</label>
+
+<span class="field-validation-valid error" data-valmsg-for="message" data-valmsg-replace="true">Message is required.</span>
+	  					</div>
+
+			  		</div>
+				</div>
+
+			</div>
 		</div>
-	</div>
+
+		<span class="file-attachment-box-note">Please be patient when submitting the form and uploading files</span>
+
+	</div> <!-- file-attachment-box -->
 
 	<!-- ************************** ROW ************************** -->
 

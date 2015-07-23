@@ -46,6 +46,10 @@ $grey-border-color: #DEDEDE;
 	border: 2px solid $grey-border-color;
 }
 
+.lv-super .error select {
+	margin-bottom: 0;
+}
+
 //=========================================
 // Checkbox
 //=========================================

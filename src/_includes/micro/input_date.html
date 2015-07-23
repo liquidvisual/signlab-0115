@@ -1,5 +1,7 @@
 {% assign title = include.title %}
+{% assign required = include.required %}
 
 <label>
-	<input class="ui-datepicker" name="{{ title }}" type="text" placeholder="Date needed (required)" pattern="/*">
+	<input class="ui-datepicker" name="{{ title }}" type="text" placeholder="Date needed (required)" pattern="/*" required>
 </label>
+<span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true">{{ title }} is required.</span>

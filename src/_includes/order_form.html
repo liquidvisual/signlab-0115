@@ -103,7 +103,7 @@
 			<div data-dropdown="delivery" class="hide">
 			    <div class="row">
 					<div class="columns">
-						{% include micro/textarea.html title="Delivery address" %}
+						{% include micro/textarea.html title="Delivery address" required=true %}
 					</div>
 				</div>
 			</div>
@@ -135,7 +135,7 @@
 			<div data-dropdown="select-theme" class="hide">
         	    <div class="row">
         			<div class="columns">
-        				{% include micro/select.html title="Theme" %}
+        				{% include micro/select.html title="Theme" required=true %}
         			</div>
         		</div>
     		</div>
@@ -176,7 +176,7 @@
 
 	  					<!-- Personalised Message -->
 	  					<div class="form-dropdown">
-	  			    		{% include micro/input_text_no_placeholder.html title="Message" required=true %}
+	  			    		{% include micro/textarea.html title="Message" %}
 	  					</div>
 
 			  		</div>

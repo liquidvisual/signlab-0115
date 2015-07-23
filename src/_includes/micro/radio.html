@@ -1,8 +1,9 @@
 {% assign title = include.title %}
 {% assign group = include.group %}
+{% assign required = include.required %}
 
 <label class="radio">
-	<input id="{{ title | slugify }}" type="radio" name="{{ group }}" data-val="true" data-val-required="The {{ title }} field is required.">
+	<input required id="{{ title | slugify }}" type="radio" name="{{ group }}" data-val="true" data-val-required="The {{ title }} field is required.">
 	<input name="{{ group }}" type="hidden" value="false">
 	{{ title }}
 </label>

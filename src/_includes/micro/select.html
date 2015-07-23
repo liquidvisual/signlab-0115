@@ -1,0 +1,12 @@
+{% assign title = include.title %}
+{% assign required = include.required %}
+
+<label>
+	<select name="{{ title }}" id="{{ title | slugify }}" {% if required %}required=""{% endif %}>
+		<option value="">{{ title }} {% if required %}(required){% endif %}</option>
+		<option value="Option 1">Option 1</option>
+		<option value="Option 2">Option 2</option>
+		<option value="Option 3">Option 3</option>
+	</select>
+</label>
+<span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true">{{ title }} is required.</span>

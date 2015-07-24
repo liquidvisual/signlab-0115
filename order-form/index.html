@@ -221,6 +221,10 @@
 			<!-- Checkbox JQuery - Open Dropdowns -->
 <script>
 	window.onload = function(){
+
+		// To presever consistency with markup
+		$('.js-required').not(':visible').removeAttr('required');
+
 		// Loop through inputs, setup triggers
 		$('.checkbox, .radio').each(function(){
 			var $this = $(this);
@@ -238,16 +242,18 @@
 			var checked = $('input', $this).prop('checked');
 			var dropdown = $('[data-dropdown='+id+']');
 
-		    if (!checked) {
-		    	// Hide dropdown
-		    	dropdown.addClass('hide').removeClass('animated fadeIn');
-		    } else {
+		    if (checked) {
 		    	// If Radio - hide all groups
 		    	if ($this.hasClass('radio')) {
 		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
 		    	}
 		    	// Show dropdown
 		    	dropdown.removeClass('hide').addClass('animated fadeIn');
+		    	dropdown.find('.js-required').prop('required', true);
+		    } else {
+		    	// Hide dropdown
+		    	dropdown.addClass('hide').removeClass('animated fadeIn');
+		    	dropdown.find('.js-required').removeAttr('required');
 		    }
 		}
 	}
@@ -255,7 +261,7 @@
 
 <!-- ORDER FORM -->
 
-<form data-abide="" action="/" id="order-form" method="post" novalidate="novalidate">
+<form id="order-form" data-abide="" novalidate="" method="post" action="#" enctype="multipart/form-data">
 
 	<!-- ************************** ROW ************************** -->
 
@@ -266,8 +272,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Company name field is required." id="company-name" name="Company name" placeholder="Company name (required)" type="text" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="company-name" data-valmsg-replace="true">Company name is required.</span>
@@ -278,8 +286,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Name field is required." id="name" name="Name" placeholder="Name (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Name field is required." id="name" name="Name" placeholder="Name (required)" type="text" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="name" data-valmsg-replace="true">Name is required.</span>
@@ -290,8 +300,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Phone field is required." id="phone" name="Phone" placeholder="Phone (required)" type="text" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="phone" data-valmsg-replace="true">Phone is required.</span>
@@ -308,8 +320,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Email field is required." id="email" name="Email" placeholder="Email (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Email field is required." id="email" name="Email" placeholder="Email (required)" type="email" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="email" data-valmsg-replace="true">Email is required.</span>
@@ -320,8 +334,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Order number field is required." id="order-number" name="Order number" placeholder="Order number (required)" type="text" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="order-number" data-valmsg-replace="true">Order number is required.</span>
@@ -332,8 +348,10 @@
 			
 
 
+
+
 <label>
-	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" required="" />
+	<input data-val="true" data-val-required="The Deceased name field is required." id="deceased-name" name="Deceased name" placeholder="Deceased name (required)" type="text" value="" required="" class="" />
 </label>
 
 <span class="field-validation-valid error" data-valmsg-for="deceased-name" data-valmsg-replace="true">Deceased name is required.</span>
@@ -350,8 +368,9 @@
   			
 
 
+
 <label>
-	<select name="Size" id="size" required="">
+	<select name="Size" id="size" required="" class="">
 		<option value="">Size (required)</option>
 		<option value="Option 1">Option 1</option>
 		<option value="Option 2">Option 2</option>
@@ -393,7 +412,8 @@
 						
 
 
-<textarea required="" cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address"></textarea>
+
+<textarea required="" cols="20" rows="2" data-val="true" data-val-required="The Delivery address field is required." id="delivery-address" name="Delivery address" class="js-required"></textarea>
 
 <span class="field-validation-valid error" data-valmsg-for="delivery-address" data-valmsg-replace="true">Your Delivery address is required.</span>
 					</div>
@@ -412,7 +432,8 @@
 			
 
 
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message"></textarea>
+
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Personalised Message field is required." id="personalised-message" name="Personalised Message" class=""></textarea>
 
 <span class="field-validation-valid error" data-valmsg-for="personalised-message" data-valmsg-replace="true">Your Personalised Message is required.</span>
 		</div>
@@ -443,8 +464,9 @@
         				
 
 
+
 <label>
-	<select name="Theme" id="theme" required="">
+	<select name="Theme" id="theme" required="" class="js-required">
 		<option value="">Theme (required)</option>
 		<option value="Option 1">Option 1</option>
 		<option value="Option 2">Option 2</option>
@@ -511,7 +533,8 @@
 	  			    		
 
 
-<textarea cols="20" rows="2" data-val="true" data-val-required="The Message field is required." id="message" name="Message"></textarea>
+
+<textarea cols="20" rows="2" data-val="true" data-val-required="The Message field is required." id="message" name="Message" class=""></textarea>
 
 <span class="field-validation-valid error" data-valmsg-for="message" data-valmsg-replace="true">Your Message is required.</span>
 	  					</div>

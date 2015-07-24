@@ -1,6 +1,7 @@
 {% assign title = include.title %}
 {% assign required = include.required %}
+{% assign class = include.class %}
 
-<textarea {% if required %} required="" {% endif %} cols="20" rows="2" data-val="true" data-val-required="The {{ title }} field is required." id="{{ title | slugify }}" name="{{ title }}"></textarea>
+<textarea {% if required %} required="" {% endif %} cols="20" rows="2" data-val="true" data-val-required="The {{ title }} field is required." id="{{ title | slugify }}" name="{{ title }}" class="{{class}}"></textarea>
 
 <span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true">Your {{ title }} is required.</span>

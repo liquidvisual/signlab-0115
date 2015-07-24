@@ -1,6 +1,10 @@
 <!-- Checkbox JQuery - Open Dropdowns -->
 <script>
 	window.onload = function(){
+
+		// To presever consistency with markup
+		$('.js-required').not(':visible').removeAttr('required');
+
 		// Loop through inputs, setup triggers
 		$('.checkbox, .radio').each(function(){
 			var $this = $(this);
@@ -18,16 +22,18 @@
 			var checked = $('input', $this).prop('checked');
 			var dropdown = $('[data-dropdown='+id+']');
 
-		    if (!checked) {
-		    	// Hide dropdown
-		    	dropdown.addClass('hide').removeClass('animated fadeIn');
-		    } else {
+		    if (checked) {
 		    	// If Radio - hide all groups
 		    	if ($this.hasClass('radio')) {
 		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
 		    	}
 		    	// Show dropdown
 		    	dropdown.removeClass('hide').addClass('animated fadeIn');
+		    	dropdown.find('.js-required').prop('required', true);
+		    } else {
+		    	// Hide dropdown
+		    	dropdown.addClass('hide').removeClass('animated fadeIn');
+		    	dropdown.find('.js-required').removeAttr('required');
 		    }
 		}
 	}
@@ -35,7 +41,7 @@
 
 <!-- ORDER FORM -->
 
-<form data-abide action="/" id="order-form" method="post" novalidate="novalidate">
+<form id="order-form" data-abide novalidate method="post" action="#" enctype="multipart/form-data">
 
 	<!-- ************************** ROW ************************** -->
 
@@ -43,17 +49,17 @@
 
 		<!-- Company Name -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Company name" required=true %}
+			{% include micro/input_text.html title="Company name" required=true type="text" %}
 		</div>
 
 		<!-- Your Name -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Name" required=true %}
+			{% include micro/input_text.html title="Name" required=true type="text" %}
 		</div>
 
 		<!-- Phone -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Phone" required=true %}
+			{% include micro/input_text.html title="Phone" required=true type="text" %}
 		</div>
 
 	</div>
@@ -64,17 +70,17 @@
 
 		<!-- Email -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Email" required=true %}
+			{% include micro/input_text.html title="Email" required=true type="email" %}
 		</div>
 
 		<!-- Order Number -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Order number" required=true %}
+			{% include micro/input_text.html title="Order number" required=true type="text" %}
 		</div>
 
 		<!-- Deceased Name -->
 		<div class="large-4 columns">
-			{% include micro/input_text.html title="Deceased name" required=true %}
+			{% include micro/input_text.html title="Deceased name" required=true type="text" %}
 		</div>
 
 	</div>
@@ -90,7 +96,7 @@
 
 		<!-- Date Needed -->
 		<div class="large-4 columns">
-            {% include micro/input_date.html title="Date Needed" %}
+            {% include micro/input_date.html title="Date Needed" type="text" %}
 		</div>
 
 		<!-- Delivery -->
@@ -103,7 +109,7 @@
 			<div data-dropdown="delivery" class="hide">
 			    <div class="row">
 					<div class="columns">
-						{% include micro/textarea.html title="Delivery address" required=true %}
+						{% include micro/textarea.html title="Delivery address" class="js-required" required=true %}
 					</div>
 				</div>
 			</div>
@@ -135,7 +141,7 @@
 			<div data-dropdown="select-theme" class="hide">
         	    <div class="row">
         			<div class="columns">
-        				{% include micro/select.html title="Theme" required=true %}
+        				{% include micro/select.html title="Theme" class="js-required" required=true %}
         			</div>
         		</div>
     		</div>

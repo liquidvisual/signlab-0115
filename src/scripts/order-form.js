@@ -8,11 +8,16 @@
 // Controls checkbox dropdowns
 //-----------------------------------------------------------------
 
+// // To presever consistency with markup
+// $('.js-required').not(':visible').removeAttr('required');
+
+// // Loop through inputs, setup triggers
 // $('.checkbox, .radio').each(function(){
 // 	var $this = $(this);
 // 	$this.click(function() {
 // 		setForm($(this));
 // 	});
+// 	// setup triggers to preserve for refresh
 // 	setForm($(this));
 // });
 
@@ -23,16 +28,18 @@
 // 	var checked = $('input', $this).prop('checked');
 // 	var dropdown = $('[data-dropdown='+id+']');
 
-//     if (!checked) {
-//     	// Hide dropdown
-//     	dropdown.addClass('hide').removeClass('animated fadeIn');
-//     } else {
+//     if (checked) {
 //     	// If Radio - hide all groups
 //     	if ($this.hasClass('radio')) {
 //     		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
 //     	}
 //     	// Show dropdown
 //     	dropdown.removeClass('hide').addClass('animated fadeIn');
+//     	dropdown.find('.js-required').prop('required', true);
+//     } else {
+//     	// Hide dropdown
+//     	dropdown.addClass('hide').removeClass('animated fadeIn');
+//     	dropdown.find('.js-required').removeAttr('required');
 //     }
 // }
 

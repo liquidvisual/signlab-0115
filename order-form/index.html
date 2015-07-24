@@ -246,6 +246,9 @@
 		    	// If Radio - hide all groups
 		    	if ($this.hasClass('radio')) {
 		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
+
+		    		// Edge case - prevent theme from invalidating when not selected (but clicked on without selecting)
+		    		$('.js-required').not(':visible').removeAttr('required');
 		    	}
 		    	// Show dropdown
 		    	dropdown.removeClass('hide').addClass('animated fadeIn');

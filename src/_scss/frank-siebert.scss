@@ -1,0 +1,210 @@
+@charset "utf-8";
+/*
+    FRANK-SIEBERT.CSS
+
+    - Last updated: 18.10.16
+    - hello@liquidvisual.com
+*/
+//-----------------------------------------------------------------
+// IMPORTS
+//-----------------------------------------------------------------
+
+@import "foundation/fjs-settings";
+@import "foundation/app";
+
+//-----------------------------------------------------------------
+// VARIABLES
+//-----------------------------------------------------------------
+
+// $brand-primary: #3b3b3b;
+
+//-----------------------------------------------------------------
+// GLOBAL
+//-----------------------------------------------------------------
+
+html {
+	font-size: 75%;
+
+	@media #{$medium-up} {
+	    font-size: 100%;
+	}
+}
+
+//-----------------------------------------------------------------
+// TYPE
+//-----------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: uppercase;
+}
+
+p.lead {
+	font-size: rem-calc(33);
+}
+
+select {
+	// height: auto;
+	padding: rem-calc(0 25) !important;
+}
+
+//-----------------------------------------------------------------
+// HEADER
+//-----------------------------------------------------------------
+
+.fjs-header {
+	padding: rem-calc(30 0);
+
+	@media #{$medium-up} {
+	    padding: rem-calc(60 0);
+	}
+
+	.logo img {
+		width: auto;
+		max-height: rem-calc(120);
+	}
+}
+
+//-----------------------------------------------------------------
+// SECTION
+//-----------------------------------------------------------------
+
+.fjs-section {
+	padding: rem-calc(60 0);
+}
+
+//-----------------------------------------------------------------
+// FOOTER
+//-----------------------------------------------------------------
+
+.fjs-footer {
+	padding: rem-calc(30 0);
+	// background: $brand-primary;
+	color: white;
+
+	@media #{$medium-up} {
+	    padding: rem-calc(100 0);
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-bottom: rem-calc(30);
+		font-size: rem-calc(25);
+		color: white;
+
+		@media #{$medium-up} {
+		    margin-bottom: rem-calc(100);
+		}
+
+		&:hover {
+			color: #999;
+		}
+	}
+
+	.logo {
+		display: inline-block;
+		margin-bottom: rem-calc(40);
+
+		img {
+			max-width: rem-calc(100);
+
+			@media #{$medium-up} {
+				max-width: none;
+			}
+		}
+	}
+}
+
+//-----------------------------------------------------------------
+// FILTER GROUP
+//-----------------------------------------------------------------
+
+.fjs-filter-group {
+	overflow: hidden;
+}
+
+//=========================================
+// FILTER LIST
+//=========================================
+
+.fjs-filter-list {
+	margin-bottom: rem-calc(30);
+
+	@media #{$xlarge-up} {
+	    margin-bottom: rem-calc(80);
+	}
+
+	li > a {
+		display: inline-block;
+		width: 100%;
+		border: 1px solid #ececec;
+		font-size: rem-calc(14);
+		line-height: 50px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	li.active a {
+		// background: $primary-color;
+		color: white;
+		border-color: transparent;
+	}
+}
+
+//-----------------------------------------------------------------
+// GALLERY
+//-----------------------------------------------------------------
+
+.fjs-gallery {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 100%;
+	background: lighten(#eee, 3%);
+
+	li {
+		width: 50%;
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		float: left;
+
+		@media #{$medium-up} {
+		    width: 25%;
+		}
+	}
+
+	li.inactive {
+		@keyframes thumbnail-vanish {
+		    0%   { transform: scale(100%); }
+		    100% { transform: scale(0); }
+		}
+
+		@keyframes thumbnail-none {
+		    0% {}
+			100% { width: 0; height: 0; opacity: 0; }
+		}
+		animation: thumbnail-vanish 500ms ease 0s alternate 1 forwards, thumbnail-none 500ms ease 500ms alternate 1 forwards;
+	}
+}
+
+//-----------------------------------------------------------------
+// LIGHTBOX CONTROLS
+//-----------------------------------------------------------------
+
+.mfp-container {
+
+	button:hover {
+		background: none;
+	}
+
+	.mfp-arrow-right:before,
+	.mfp-arrow-right .mfp-b {
+		border-left: 27px solid #444;
+	}
+
+	.mfp-arrow-left:before,
+	.mfp-arrow-left .mfp-b {
+		border-right: 27px solid #444;
+	}
+}

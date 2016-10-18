@@ -1,0 +1,174 @@
+<!-- Checkbox JQuery - Open Dropdowns -->
+<script>
+	window.onload = function(){
+
+		// To presever consistency with markup
+		$('.js-required').not(':visible').removeAttr('required');
+
+		// Loop through inputs, setup triggers
+		$('.checkbox, .radio').each(function(){
+			var $this = $(this);
+			$this.click(function() {
+				setForm($(this));
+			});
+			// setup triggers to preserve for refresh
+			setForm($(this));
+		});
+
+		// setForm
+		function setForm(target) {
+			var $this = target;
+			var id = $this.find('input').attr('id');
+			var checked = $('input', $this).prop('checked');
+			var dropdown = $('[data-dropdown='+id+']');
+
+		    if (checked) {
+		    	// If Radio - hide all groups
+		    	if ($this.hasClass('radio')) {
+		    		$('[data-dropdown="select-theme"], [data-dropdown="personalised"]').addClass('hide').addClass('animated fadeIn');
+
+		    		// Edge case - prevent theme from invalidating when not selected (but clicked on without selecting)
+		    		$('.js-required').not(':visible').removeAttr('required');
+		    	}
+		    	// Show dropdown
+		    	dropdown.removeClass('hide').addClass('animated fadeIn');
+		    	dropdown.find('.js-required').prop('required', true);
+		    } else {
+		    	// Hide dropdown
+		    	dropdown.addClass('hide').removeClass('animated fadeIn');
+		    	dropdown.find('.js-required').removeAttr('required');
+		    }
+		}
+	}
+</script>
+
+<!-- ORDER FORM -->
+
+<form id="order-form" data-abide novalidate method="post" action="#" enctype="multipart/form-data">
+
+	<!-- ************************** ROW 1 ************************** -->
+
+	<div class="row">
+
+		<!-- Company Name -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Company name" required=false type="text" %}
+		</div>
+
+		<!-- Your Name -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Name" required=false type="text" %}
+		</div>
+
+		<!-- Phone -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Phone" required=false type="text" %}
+		</div>
+
+	</div>
+
+	<!-- ************************** ROW 2 ************************** -->
+
+	<div class="row">
+
+		<!-- Email -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Email" required=false type="email" %}
+		</div>
+
+		<!-- Deceased Name -->
+		<div class="large-4 columns">
+			{% include micro/input_text.html title="Deceased name" required=false type="text" %}
+		</div>
+
+		<!-- Size -->
+		<div class="large-4 columns">
+			{% include micro/select.html title="Size" required=false %}
+		</div>
+
+	</div>
+
+	<!-- ************************** ROW 3 ************************** -->
+
+  	<div class="row">
+
+		<!-- Select Theme -->
+		<div class="large-4 columns">
+        	{% include micro/radio.html title="Select theme" group="theme-or-personalised" %}
+
+			<!-- ************ ROW ************ -->
+
+			<!-- Personalised Message -->
+			<div data-dropdown="select-theme" class="hide">
+        	    <div class="row">
+        			<div class="columns">
+        				{% include micro/select.html title="Theme" class="js-required" required=false %}
+        			</div>
+        		</div>
+    		</div>
+		</div>
+
+		<!-- Personalised -->
+		<div class="large-4 end columns">
+        	{% include micro/radio.html title="Personalised" group="theme-or-personalised" %}
+		</div>
+
+		<!-- Date Needed -->
+		<div class="large-4 columns">
+            {% include micro/input_date.html title="Date Needed" type="text" %}
+		</div>
+
+  	</div>
+
+	<!-- ************************** ROW ************************** -->
+
+	<div data-dropdown="personalised" class="file-attachment-box hide">
+		<div class="row">
+			<div class="large-6 columns">
+
+				<!-- Upload Images -->
+				<div class="row">
+					<div class="medium-3 large-4 columns">
+						<p>Upload Images</p>
+					</div>
+			  		<div class="medium-9 large-7 end columns">
+			  			{% include micro/input_file.html title="Attach images" %}
+			  		</div>
+				</div>
+
+			</div>
+			<div class="large-6 columns">
+
+				<!-- Message -->
+				<div class="row">
+					<div class="medium-3 columns">
+						<p>Message</p>
+					</div>
+			  		<div class="medium-9 columns">
+
+	  					<!-- Personalised Message -->
+	  					<div class="form-dropdown">
+	  			    		{% include micro/textarea.html title="Message" %}
+	  					</div>
+
+			  		</div>
+				</div>
+
+			</div>
+		</div>
+
+		<span class="file-attachment-box-note">Please be patient when submitting the form and uploading files</span>
+
+	</div> <!-- file-attachment-box -->
+
+	<!-- ************************** ROW ************************** -->
+
+	<!-- Submit -->
+	<div class="row">
+		<div class="columns text-center medium-text-right">
+			<br class="show-for-small-only">
+			{% include micro/input_submit.html title="Send Order Request" %}
+		</div>
+	</div>
+
+</form>

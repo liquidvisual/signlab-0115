@@ -69,9 +69,9 @@
 // $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-$include-html-classes: true;
+$include-html-classes: true !default;
 // $include-print-styles: true;
-$include-html-global-classes: $include-html-classes;
+$include-html-global-classes: $include-html-classes !default;
 
 // b. Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -87,7 +87,7 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -96,8 +96,8 @@ $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial
 // $font-weight-bold: bold !default;
 
 // We use these as default colors throughout
-$primary-color: #4B97ED;
-$secondary-color: #828282; //#e7e7e7;
+$primary-color: #4B97ED !default;
+$secondary-color: #828282 !default; //#e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -125,8 +125,8 @@ $secondary-color: #828282; //#e7e7e7;
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-font-color: $secondary-color; //$jet;
-$body-font-family: $font-family-sans-serif;
+$body-font-color: $secondary-color !default; //$jet;
+$body-font-family: $font-family-sans-serif !default;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -140,7 +140,7 @@ $body-font-family: $font-family-sans-serif;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-$global-radius: 5px;
+$global-radius: 5px !default;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -157,11 +157,11 @@ $global-radius: 5px;
 // $xlarge-range: (90.063em, 120em);
 // $xxlarge-range: (120.063em, 99999999em);
 
-$small-range: (0em, 40em);   // 0-640
-$medium-range: (40.063em, 63.938em); // 641-1023
-$large-range: (64em, 64.375em);  // 1024 - 1030
-$xlarge-range: (64.063em, 73.125em); // 1031-1170
-$xxlarge-range: (73.188em); // 1171+
+$small-range: (0em, 40em) !default;   // 0-640
+$medium-range: (40.063em, 63.938em) !default; // 641-1023
+$large-range: (64em, 64.375em) !default;  // 1024 - 1030
+$xlarge-range: (64.063em, 73.125em) !default; // 1031-1170
+$xxlarge-range: (73.188em) !default; // 1171+
 
 // $small-range: (0em, 40em);   // 0-640
 // $medium-range: (40.063em, 48em); // 641-768
@@ -208,25 +208,25 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-$header-font-weight: bold; //$font-weight-normal;
+$header-font-weight: bold !default; //$font-weight-normal;
 // $header-font-style: normal;
-$header-font-color: $secondary-color; //$jet;
+$header-font-color: $secondary-color !default; //$jet;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(99);
-$h2-font-size: rem-calc(62); //rem-calc(37);
-$h3-font-size: rem-calc(33);
+$h1-font-size: rem-calc(99) !default;
+$h2-font-size: rem-calc(62) !default; //rem-calc(37);
+$h3-font-size: rem-calc(33) !default;
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
 // $h1-font-reduction: rem-calc(10) !default;
-$h2-font-reduction: rem-calc(25); //rem-calc(10) !default;
+$h2-font-reduction: rem-calc(25) !default; //rem-calc(10) !default;
 $h3-font-reduction: rem-calc(10) !default;
 // $h4-font-reduction: rem-calc(5) !default;
 // $h5-font-reduction: 0 !default;
@@ -234,7 +234,7 @@ $h3-font-reduction: rem-calc(10) !default;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-$subheader-font-color: $primary-color; //scale-color($header-font-color, $lightness: 35%);
+$subheader-font-color: $primary-color !default; //scale-color($header-font-color, $lightness: 35%);
 // $subheader-font-weight: $font-weight-normal;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
@@ -246,7 +246,7 @@ $subheader-font-color: $primary-color; //scale-color($header-font-color, $lightn
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1.2rem;
+$paragraph-font-size: 1.2rem !default;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
@@ -271,10 +271,10 @@ $paragraph-font-size: 1.2rem;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-$hr-border-width: 2px;
+$hr-border-width: 2px !default;
 // $hr-border-style: solid;
 // $hr-border-color: $gainsboro;
-$hr-margin: rem-calc(40);
+$hr-margin: rem-calc(40) !default;
 
 // We use these to style lists
 // $list-font-family: $paragraph-font-family;
@@ -636,17 +636,17 @@ $hr-margin: rem-calc(40);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-$input-font-size: rem-calc(18); //rem-calc(14);
+$input-font-size: rem-calc(18) !default; //rem-calc(14);
 // $input-bg-color: $white;
 // $input-focus-bg-color: scale-color($white, $lightness: -2%);
-$input-border-color: #DEDEDE; //scale-color($white, $lightness: -20%);
+$input-border-color: #DEDEDE !default; //scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
-$input-border-width: 2px;
+$input-border-width: 2px !default;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: $gainsboro;
 // $input-disabled-cursor: $cursor-default-value;
-$input-box-shadow: none; //inset 0 1px 2px rgba(0,0,0,0.1);
+$input-box-shadow: none !default; //inset 0 1px 2px rgba(0,0,0,0.1);
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
@@ -682,7 +682,7 @@ $input-box-shadow: none; //inset 0 1px 2px rgba(0,0,0,0.1);
 // $input-error-message-font-color-alt: $oil;
 
 // We use this to style the glowing effect of inputs when focused
-$input-include-glowing-effect: false;
+$input-include-glowing-effect: false !default;
 // $glowing-effect-fade-time: 0.45s;
 // $glowing-effect-color: $input-focus-border-color;
 

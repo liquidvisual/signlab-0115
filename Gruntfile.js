@@ -202,7 +202,8 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= yeoman.dist %>'
       },
-      html: '<%= yeoman.dist %>/index.html'
+      html: ['<%= yeoman.dist %>/index.html',
+           '<%= yeoman.dist %>/frank-siebert/index.html']
     },
     usemin: {
       options: {
@@ -215,22 +216,47 @@ module.exports = function (grunt) {
     //-----------------------------------------------------
     // HTML MINIFY (Disabled)
     //-----------------------------------------------------
-    // htmlmin: {
-    //   dist: {
-    //     options: {
-    //       collapseWhitespace: true,
-    //       collapseBooleanAttributes: true,
-    //       removeAttributeQuotes: true,
-    //       removeRedundantAttributes: true
-    //     },
-    //     files: [{
-    //       expand: true,
-    //       cwd: '<%= yeoman.dist %>',
-    //       src: '**/*.html',
-    //       dest: '<%= yeoman.dist %>'
-    //     }]
-    //   }
-    // },
+    htmlmin: {
+       dist: {
+         options: {
+           collapseWhitespace: true,
+           collapseBooleanAttributes: true,
+           removeAttributeQuotes: true,
+           removeRedundantAttributes: false
+         },
+         files: [{
+           expand: true,
+           cwd: '<%= yeoman.dist %>',
+           src: '**/*.html',
+           dest: '<%= yeoman.dist %>'
+         }]
+       }
+     },
+    //-----------------------------------------------------
+    // HTML PRETTIFY
+    //-----------------------------------------------------
+    prettify: {
+      options: {
+        condense: true,
+        padcomments: true,
+        indent: 4,
+        //indent_char: 'space',
+        indent_inner_html: false,
+        brace_style: 'collapse',
+        preserve_newlines: false,
+        max_preserve_newlines: false, // 'unlimited'
+        unformatted: ['pre', 'code'],
+
+      },
+      // Prettify a directory of files
+      all: {
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        ext: '.html',
+        src: '**/*.html',
+        dest: '<%= yeoman.dist %>'
+      }
+    },
     //-----------------------------------------------------
     // Concat, Uglify, CSS Min
     //-----------------------------------------------------
@@ -484,8 +510,9 @@ module.exports = function (grunt) {
     // 'filerev',
     'usemin',
     //'pixrem',
-    'cdnify'
-    //'htmlmin'
+    'cdnify',
+    'htmlmin',
+    'prettify'
     ]);
 
   //=======================================

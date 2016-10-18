@@ -5,56 +5,63 @@
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>/frank-siebert/</loc>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>/maps-test/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/order-form/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/showcase/showcase-detail/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/showcase/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/signage/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>/styleguide/</loc>
-    <lastmod>2015-07-24T17:19:46+10:00</lastmod>
+    <lastmod>2016-10-18T13:51:26+11:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

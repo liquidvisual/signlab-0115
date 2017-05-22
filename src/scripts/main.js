@@ -59,6 +59,26 @@ if (!TOUCH_ENABLED) {
 }
 
 //-----------------------------------------------------------------
+// FORM SHOW
+//-----------------------------------------------------------------
+
+$('[data-upload-multiple-trigger]').each(function(event){
+    var $this = $(this);
+    $this.click(function(event){
+        event.preventDefault();
+        var $hiddenContents = $this.parent().parent().find('[data-upload-multiple]');
+
+        if ($hiddenContents.hasClass('hide')) {
+            $hiddenContents.removeClass('hide');
+            $this.text('Upload less images');
+        } else {
+            $hiddenContents.addClass('hide');
+            $this.text('Upload more images');
+        }
+    })
+});
+
+//-----------------------------------------------------------------
 // Toggle Excess Items (Eg Gallery pics that exceed amount)
 //-----------------------------------------------------------------
 

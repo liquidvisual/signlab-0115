@@ -52,6 +52,43 @@
 	}
 }
 
+//=========================================
+// DIVIDER
+//=========================================
+
+.divider {
+	position: relative;
+	border-bottom: 2px solid $secondary-color;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		width: rem-calc(80);
+		height: rem-calc(5);
+		background: $primary-color;
+	}
+}
+
+//=========================================
+// NO UNDERLINE - used in coffins
+//=========================================
+
+.has-no-underline {
+	padding: rem-calc(50 0 70 0);
+
+	.headline {
+		padding-bottom: 0;
+		margin-bottom: rem-calc(20);
+		border-bottom: 0;
+
+		h2:after {
+			display: none;
+		}
+	}
+}
+
 .headline-back {
 	position: relative;
 	top: rem-calc(-50);

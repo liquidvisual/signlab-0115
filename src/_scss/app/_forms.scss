@@ -109,12 +109,34 @@ $grey-border-color: #DEDEDE;
 	margin-bottom: 0;
 }
 
+// Errors for coffin form - 22.05.17
+
+// .file-attachment.error + br + [data-upload-multiple] {
+// 	padding-top: 200px;
+// 	display: none;
+// }
+
 //=========================================
 // File Upload
 //=========================================
 
 .lv-super .file-attachment {
 	border: 2px solid $grey-border-color;
+
+	&.error {
+		margin-bottom: rem-calc(30);
+	}
+
+	&.error .error {
+		position: relative;
+		top: 18px;
+		left: -22px;
+		width: calc(100% + 44px);
+
+		@media #{$medium-up} {
+		    top: 27px;
+		}
+	}
 
 	@media #{$large-up} {
 	    margin-bottom: 0;

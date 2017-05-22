@@ -19,10 +19,12 @@
 }
 
 .footer-middle {
-	height: rem-calc(200);
+	// height: rem-calc(200);
+	// overflow: hidden;
+	line-height: 0;
 
 	@media #{$medium-up} {
-	    height: rem-calc(390);
+	    // height: rem-calc(390);
 	}
 }
 

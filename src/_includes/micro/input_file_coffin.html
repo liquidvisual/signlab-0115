@@ -1,0 +1,8 @@
+{% assign title = include.title %}
+
+<label>
+	<div class="file-attachment">
+		<input name="{{ title }}" type="file" aria-label="File browser" placeholder="Upload" value="" multiple {{include.required}}>
+		<span class="field-validation-valid error" data-valmsg-for="{{ title | slugify }}" data-valmsg-replace="true">Attachment is required.</span>
+	</div>
+</label>

@@ -48,7 +48,9 @@ layout: master
 <!-- FORM BEGINS -->
 <form data-abide novalidate method="post" action="#" enctype="multipart/form-data">
 
-	{% for item in (1..3) %}
+	{% assign coffin_pieces = "Lid,Left Side,Right Side,Head End,Foot End" | split: ',' %}
+
+	{% for item in coffin_pieces %}
 
 		<!-- DIVIDER -->
 		<div class="row outer-row">
@@ -62,17 +64,17 @@ layout: master
 		<section class="section-upload">
 			<div class="row">
 				<div class="large-5 columns">
-					{% assign file_title_1 = "Attachment-" | append: forloop.index | append: "a" %}
+					{% assign file_title_1 = item | append: '-1' | slugify %}
 					{% include micro/input_file_coffin.html title=file_title_1 required="required" %}
 					<br>
 					<div class="hide" data-upload-multiple>
-						{% assign file_title_2 = "Attachment-" | append: forloop.index | append: "b" %}
+						{% assign file_title_2 = item | append: '-2' | slugify %}
 						{% include micro/input_file_coffin.html title=file_title_2 %}
 						<br>
-						{% assign file_title_3 = "Attachment-" | append: forloop.index | append: "c" %}
+						{% assign file_title_3 = item | append: '-3' | slugify %}
 						{% include micro/input_file_coffin.html title=file_title_3 %}
 						<br>
-						{% assign file_title_4 = "Attachment-" | append: forloop.index | append: "d" %}
+						{% assign file_title_4 = item | append: '-4' | slugify %}
 						{% include micro/input_file_coffin.html title=file_title_4 %}
 					</div>
 				</div>
@@ -82,8 +84,7 @@ layout: master
 			</div>
 		</section>
 		{% endcapture %}
-		{% assign piece_title = "Example " | append: forloop.index %}
-		{% include content_section.html theme="light-theme" img_down=true page_curl=false title=piece_title body=section_body classes="has-no-underline" %}
+		{% include content_section.html theme="light-theme" img_down=true page_curl=false title=item body=section_body classes="has-no-underline" %}
 
 	{% endfor %}
 

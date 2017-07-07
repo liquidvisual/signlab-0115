@@ -110,7 +110,8 @@
                 </header>
 
             <!-- .header -->
-            <style>
+            
+<!-- ADHOC STYLES - FOR DEMO PURPOSES ONLY --><style>
             a,
             .section .headline h2 {
                 color: #5152bc;
@@ -133,7 +134,63 @@
             .subheader {
                 color: #8584f2;
             }
+            
+            .lv-hero h1 {
+                text-transform: lowercase;
+                font-family: 'Courier New';
+                font-size: 40px;
+                font-weight: 500;
+            }
             </style>
+
+            <!-- HERO MODULE -->
+            <div class="lv-hero-module is-fullscreen default-style">
+
+                <!-- HERO -->
+                <div class=lv-hero style="background-image: url('/assets/img/content/personalised-lifestyle-picture-coffin-adelaide.jpg')">
+                    <iframe id=ytplayer class=video width=100% height=390 type=text/html src="https://www.youtube.com/embed/Mn9vK2zmb3c?controls=0&t=31s&showinfo=0&rel=0&enablejsapi=1" frameborder=0 allowfullscreen></iframe>
+
+                    <!-- DOWNWARDS ARROW -->
+                    <a class=lv-hero-arrow-scroll href=#tagline>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                </div>
+
+                <!-- .lv-hero -->
+                </div>
+
+            <!-- .lv-hero-module -->
+            <script>
+            //-----------------------------------------------------------------
+            // APPLIES HAS-LOADED FLAG, LIMIT TO 3+ Seconds
+            // Gives time for the video to setup and load
+            //-----------------------------------------------------------------
+            var html = document.documentElement;
+            // Limit to 3+ seconds of waiting time
+            setTimeout(function() {
+                html.className += ' has-loaded';
+            }, 3600);
+            //-----------------------------------------------------------------
+            // YOUTUBE
+            // This code loads the IFrame Player API code asynchronously.
+            //-----------------------------------------------------------------
+            var tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('ytplayer', {
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+            function onPlayerReady() {
+                player.playVideo();
+                player.mute(); // Muted by default
+            }
+            </script>
 
             <!-- DESIGN YOUR OWN COFFIN -->
             <section id=design-your-own-coffin class="section has-image-bottom-aligned light-theme fadeIn">

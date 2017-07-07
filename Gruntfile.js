@@ -68,7 +68,7 @@ module.exports = function (grunt) {
           ghostMode: {
               clicks: false,
               forms: false,
-              scroll: true
+              scroll: false
           },
           // Don't send any file-change events to browsers
           codeSync: true,

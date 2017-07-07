@@ -217,3 +217,84 @@
     	opacity: 1;
     }
 }
+
+//-----------------------------------------------------------------
+// SCROLL DOWN - 07.07.17
+//-----------------------------------------------------------------
+
+.lv-hero-arrow-scroll {
+	position: absolute;
+	bottom: 25px;
+	left: calc(50% - 20px);
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background: rgba(white, 0.2);
+	font-size: rem-calc(30);
+	line-height: 40px;
+	text-align: center;
+	color: black;
+	z-index: 1000;
+    animation: pulsate 800ms ease-out 300ms alternate infinite;
+
+    &:hover {
+    	color: white;
+    }
+
+	@keyframes pulsate {
+	    0% {transform: translateY(0);}
+	    100% {transform: translateY(10px);}
+	}
+}
+
+//-----------------------------------------------------------------
+// VIDEO FOR LIFESTYLE - 07.07.17
+//-----------------------------------------------------------------
+
+.lv-hero .video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: left bottom;
+	background-size: cover;
+	transition: 1.5s opacity;
+	opacity: 0;
+	display: none;
+
+	@media #{$medium-up} {
+	    display: block;
+	}
+}
+
+.has-loaded .lv-hero .video {
+	opacity: 1;
+}
+
+// video::-webkit-media-controls {
+//     display: none !important; // hacky
+// }
+
+//=============================================
+// THE MAGIC
+//=============================================
+
+@media (min-aspect-ratio: 16/9) {
+	.lv-hero .video {
+		top: -100%;
+  		height: 300%;
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	.lv-hero .video {
+		left: -100%;
+		width: 300%;
+	}
+}
+
+/* Microsoft Edge Browser 12+ (All) - @supports method */
+// @supports (-ms-ime-align: auto) {
+	// keep reference
+// }

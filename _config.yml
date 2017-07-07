@@ -38,5 +38,5 @@ highlighter: pygments
 #
 # sitemap: false
 
-gems:
+plugins:
   - jekyll-sitemap

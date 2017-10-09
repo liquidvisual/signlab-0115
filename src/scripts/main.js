@@ -12,18 +12,9 @@ var TOUCH_ENABLED = $(".touch").length;
 //-----------------------------------------------------------------
 
 $(document).ready(function() {
-    // NProgress.start(); // Start preloader bar
-
+    // NProgress.start(); // Start preloader bar - REMOVED
     $('input, textarea').placeholder(); // IE9 Patch
 });
-
-$(window).load(function() {
-    // NProgress.done();
-});
-
-// window.onload = function(){
-//     // NProgress.done();
-// }
 
 //-----------------------------------------------------------------
 // Hero Collage Click (Staff)
@@ -99,9 +90,24 @@ $(".item-expander").click(function(e){
 });
 
 //-----------------------------------------------------------------
-// Scroll To
+// SCROLL-TO (NEW) - Chrome had problems in 2017 - 09.10.17
 //-----------------------------------------------------------------
 
+$('a[href*="#"]:not([href="#"])').click(function() {
+    var id = $(this).attr('href');
+    var endPos = $(id);
+
+    if (endPos.length) {
+        $.scrollTo(endPos.offset().top-100, 800);
+        return false;
+    }
+});
+
+//-----------------------------------------------------------------
+// OLD SCROLL TO
+//-----------------------------------------------------------------
+
+/*
 $('a[href*=#]').each(function(){
   var $this = $(this);
   var href = $this.attr('href');
@@ -113,11 +119,13 @@ $('a[href*=#]').each(function(){
 
     $this.click(function(e){
         e.preventDefault();
+        console.log(endPos.offset().top-100);
         // console.log(href);
         $.scrollTo(endPos.offset().top-100, 800);
     });
   }
 });
+*/
 
 //-----------------------------------------------------------------
 // Offcanvas Menu
@@ -266,14 +274,14 @@ $(".hamburger").removeClass('hide').bind("click", function(e) {
 // Developer: COMMAND+S for screen width
 //==================================================
 
-$(document).keypress(function(event) {
-    if (event.which == 115 && (event.ctrlKey||event.metaKey)||(event.which == 19)) {
-        event.preventDefault();
-        alert("(w) "+$(window).width()+" (h) "+$(window).height());
-        return false;
-    }
-    return true;
-});
+// $(document).keypress(function(event) {
+//     if (event.which == 115 && (event.ctrlKey||event.metaKey)||(event.which == 19)) {
+//         event.preventDefault();
+//         alert("(w) "+$(window).width()+" (h) "+$(window).height());
+//         return false;
+//     }
+//     return true;
+// });
 //==================================================
 //
 //==================================================

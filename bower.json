@@ -9,7 +9,7 @@
     "foundation-icon-fonts": "zurb/foundation-icon-fonts",
     "isotope": "~2.1.0",
     "jQuery.mmenu": "~4.7.4",
-    "jquery.scrollTo": "~1.4.12",
+    "jquery.scrollTo": "^2.1.2",
     "magnific-popup": "https://github.com/dimsemenov/Magnific-Popup.git#master",
     "nprogress": "~0.1.6",
     "slick.js": "~1.3.15",

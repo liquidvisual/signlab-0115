@@ -65,7 +65,7 @@ $slider-triangle-size: 24px;
 	}
 }
 
-.no-touch .hover-tabs .button:hover,
+.hover-tabs .button:hover,
 .hover-tabs .active .button {
 	background: white;
 }
@@ -120,7 +120,7 @@ $slider-triangle-size: 24px;
     	margin-top: -25px;
     }
 
-    .no-touch .hover-tabs li .button:hover .arrow-box:after {
+    .hover-tabs li .button:hover .arrow-box:after {
     	border-left-color: white;
     }
 }

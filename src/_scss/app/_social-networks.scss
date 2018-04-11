@@ -36,9 +36,11 @@
 	}
 }
 
-.no-touch .social-networks a:hover {
-	background: darken($primary-color, 15%);
-	color: white;
+.social-networks a:hover {
+	@media #{$xlarge-up} {
+	    background: darken($primary-color, 15%);
+	    color: white;
+	}
 }
 
 //=========================================

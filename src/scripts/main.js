@@ -1,12 +1,9 @@
 /*
-    MAIN SCRIPTS - Last updated: 04-02-15
+    MAIN SCRIPTS - Last updated: 12.04.18, 04-02-15
 */
 //-----------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------
-
-var TOUCH_ENABLED = $(".touch").length;
-
 //-----------------------------------------------------------------
 // Document Ready
 //-----------------------------------------------------------------
@@ -39,15 +36,13 @@ $('.lv-hero-module.collage-style .lv-hero li').each(function(){
 // WOW.js - Scroll Fade In
 //-----------------------------------------------------------------
 
-if (!TOUCH_ENABLED) {
-  var wow = new WOW(
-  {
-      boxClass:     'section',      // default
-      animateClass: 'animated', // default
-      offset:       0           // default
-  }
-  ).init();
+var wow = new WOW(
+{
+    boxClass: 'section',
+    animateClass: 'animated',
+    offset: 0
 }
+).init();
 
 //-----------------------------------------------------------------
 // FORM SHOW
@@ -104,30 +99,6 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 });
 
 //-----------------------------------------------------------------
-// OLD SCROLL TO
-//-----------------------------------------------------------------
-
-/*
-$('a[href*=#]').each(function(){
-  var $this = $(this);
-  var href = $this.attr('href');
-
-  if (href.indexOf('#') == 0 && href.length > 1) {
-    var endPos = $(href);
-    // If there's a hash in the href and the string is more than 0 in length
-    // fire the scrollTo plugin
-
-    $this.click(function(e){
-        e.preventDefault();
-        console.log(endPos.offset().top-100);
-        // console.log(href);
-        $.scrollTo(endPos.offset().top-100, 800);
-    });
-  }
-});
-*/
-
-//-----------------------------------------------------------------
 // Offcanvas Menu
 //-----------------------------------------------------------------
 
@@ -150,7 +121,7 @@ $('.gallery-module').magnificPopup({
     image: {
        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
        titleSrc: function(item) {
-          return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+          return item.el.attr('title');
        }
     }
 });
@@ -186,7 +157,6 @@ $('.horizontal-slider-module').slick({
 //-----------------------------------------------------------------
 
 $(".js-gallery-slider").each(function(){
-
     var $this = $(this);
     var $sliderNav = $('.slider-nav', $this);
     var $sliderFor = $('.slider-for', $this);
@@ -243,14 +213,13 @@ $(".js-gallery-slider").each(function(){
 // Kickstart Foundation / Touch Conditionals
 //-----------------------------------------------------------------
 
-// var touchEvent = TOUCH_ENABLED ? "touchstart" : "click";
-
 //Trigger hamburger by touch on mobile - this eliminates glitch with FastClick.js
 $(".hamburger").removeClass('hide').bind("click", function(e) {
     e.preventDefault();
     $("#off-canvas-menu").trigger("open.mm");
 });
 
+// var TOUCH_ENABLED = $(".touch").length;
 // if (TOUCH_ENABLED) {
     // Make Accordion jump to the top of the heading on mobile
     // http://foundation.zurb.com/forum/posts/1316-accordion-jump-to-top-when-active
@@ -261,27 +230,10 @@ $(".hamburger").removeClass('hide').bind("click", function(e) {
         }
     });*/
 // }
-//-----------------------------------------------------------------
-// <= IE8 Caution Message
-//-----------------------------------------------------------------
-
-//$('.lv-alert .close-btn').click(function(){$(this).parent().hide();});
 
 //-----------------------------------------------------------------
-// +++ HELPERS +++
+//
 //-----------------------------------------------------------------
-//==================================================
-// Developer: COMMAND+S for screen width
-//==================================================
-
-// $(document).keypress(function(event) {
-//     if (event.which == 115 && (event.ctrlKey||event.metaKey)||(event.which == 19)) {
-//         event.preventDefault();
-//         alert("(w) "+$(window).width()+" (h) "+$(window).height());
-//         return false;
-//     }
-//     return true;
-// });
 //==================================================
 //
 //==================================================

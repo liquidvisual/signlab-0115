@@ -1,7 +1,7 @@
 /*
     NAVIGATION.CSS
 
-    - Last updated: 05.02.15
+    - Last updated: 12.04.18, 05.02.15 - removed no-touch
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -11,17 +11,10 @@
 // Navigation
 //-----------------------------------------------------------------
 
-.navigation {
-	// position: absolute;
-	// top: 0;
-	// right: 0;
-	// left: 0;
-}
-
 // Fixes glitch with MMenu changing viewport widths when scrollbar disappears
-html.no-touch {
-	overflow-y: scroll !important;
-}
+// html{
+// 	overflow-y: scroll !important;
+// }
 
 //-----------------------------------------------------------------
 // Topbar
@@ -29,12 +22,8 @@ html.no-touch {
 
 .topbar {
 	position: absolute;
-	// top: -100px;
 	top: -33px;
-	// left: 270px;
 	right: 0;
-	// width: 200%; // clever trick
-	// width: 100%;
 	margin: 0; // failsafe
 }
 
@@ -43,12 +32,7 @@ html.no-touch {
 }
 
 .topbar > ul {
-	// display: table;
 	background: white;
-	// float: right;
-
-	// pushing against logo
-	// padding-left: 110px;
 }
 
 .topbar > ul > li {
@@ -64,7 +48,7 @@ html.no-touch {
 	// background: white;
 }
 
-.no-touch .topbar .anchor:hover,
+.topbar .anchor:hover,
 .topbar li.active .anchor {
 	background: #448ada; //$primary-color;
 	color: white;
@@ -121,12 +105,8 @@ html.no-touch {
 }
 
 /* UX decision, dropdowns are fiddly on tablets */
-.no-touch .topbar .has-dropdown:hover > .dropdown {
+.topbar .has-dropdown:hover > .dropdown {
 	opacity: 1;
 	height: auto;
 	overflow: visible;
 }
-
-
-
-

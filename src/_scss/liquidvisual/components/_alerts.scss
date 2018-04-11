@@ -99,13 +99,13 @@ $alert-opacity: .95 !default;
 	cursor: pointer;
 }
 
-.no-touch .lv-alert-close:hover,
+.lv-alert-close:hover,
 .lv-alert-close:active {
 	background: darken($alert-color, 10%);
 	// box-shadow: inset 0 4px 5px -3px rgba(0,0,0,0.5);
 }
 
-.no-touch .success .lv-alert-close:hover {
+.success .lv-alert-close:hover {
 	background: darken($success-color, 10%);
 }
 

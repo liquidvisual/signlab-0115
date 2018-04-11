@@ -77,15 +77,11 @@ $hero-carousel-bullet-size: 12px;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
 
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-}
-
-.no-touch .lv-hero {
-    background-attachment: $hero-background-attachment;
+    @media #{$xlarge-up} {
+        background-attachment: $hero-background-attachment;
+    }
 }
 
 .is-alternate .lv-hero {

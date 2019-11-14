@@ -1,7 +1,7 @@
 /*
     BUTTONS.CSS
 
-    - Last updated: ^^^^^^^^
+    - Last updated: 14.09.19
     - hello@liquidvisual.com
 */
 //-----------------------------------------------------------------
@@ -38,5 +38,43 @@
 	&:hover {
 		background: white;
 		color: #222;
+	}
+}
+
+//-----------------------------------------------------------------
+//
+//-----------------------------------------------------------------
+
+.btn-phone {
+	position: absolute;
+	top: rem-calc(16);
+	right: rem-calc(65);
+	padding: rem-calc(2 10);
+	background: white;
+	color: $primary-color !important;
+	font-weight: 600;
+	height: 24px;
+	line-height: 20px;
+	index: 10;
+
+	@media #{$medium-up} {
+		top: rem-calc(35);
+		right: rem-calc(90);
+		height: 31px;
+		line-height: 26px;
+	}
+
+	@media #{$xlarge-up} {
+		top: 0;
+		right: rem-calc(25);
+		padding: rem-calc(0 10);
+		background: lighten(grey, 15%); //#51d263;
+		color: white !important;
+		line-height: 1.5;
+		height: auto;
+	}
+
+	&:hover {
+		opacity: 0.8;
 	}
 }

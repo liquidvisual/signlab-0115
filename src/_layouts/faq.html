@@ -1,0 +1,69 @@
+---
+layout: master
+---
+
+{% assign hero = "/img/content/banner-1.jpg" %}
+
+<!-- HERO MODULE -->
+<div class="lv-hero-module is-fullscreen default-style">
+
+    <!-- Hero Item -->
+    <div class="lv-hero" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
+        <div class="overlay hide-for-xlarge-up"></div>
+        <div class="row row-outer lv-vertical-center text-center">
+            <div class="columns">
+                <div class="lv-hero-caption animated text-center"> <!-- Leave here -->
+                    <h1>Frequently Asked Questions?</h1>
+                </div> <!-- .lv-hero-caption -->
+            </div> <!-- .columns -->
+        </div> <!-- .row -->
+    </div> <!-- .lv-hero -->
+
+</div> <!-- .lv-hero-module -->
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+{% capture section_body %}
+    <div class="row">
+        <div class="columns">
+            <p>3D letters can be used for signage on outdoor buildings, walls or entrance doorways. They are also great for reception signage, and many different interior options are available. What perception does your reception area or foyer give to your clients? Are you projecting the corporate image and quality branding that you think you are?</p>
+        </div>
+    </div> <!-- .row -->
+{% endcapture %}
+{% include content_section.html theme="light-theme" img_down=true page_curl=false title="FAQ" subheader="Frequently Asked Questions" body=section_body %}
+
+<!-- FAQ TABLE -->
+{% capture section_body %}
+    <div class="row">
+        <div class="columns">
+
+            <!-- ACCORDION -->
+            <div class="accordion mb-4">
+                <div>
+                    {% for i in (1..4) %}
+                        <div class="accordion-item">
+                            <div>
+                                <a href="#accordion-{{i}}" aria-expanded="false" aria-controls="accordion-{{i}}" class="accordion-title accordionTitle js-accordionTrigger">
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</h3>
+                                </a>
+                            </div>
+                            <div class="accordion-content accordionItem is-collapsed" id="accordion-{{i}}" aria-hidden="true">
+                                <p>Lorem ipsum dolor sit amet, consectetur <a href="https://www.google.com">Test link</a> adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+
+                                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+
+                                <p><a class="button" href="#">Learn More</a></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endcapture %}
+{% include content_section.html theme="dark-theme" img_down=false page_curl=false body=section_body %}
+
+<!-- FOOTER -->
+<footer class="footer">
+    {% include footer.html order_map_top=false %}
+</footer>

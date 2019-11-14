@@ -27,8 +27,14 @@
 - title: Vehicles
   url: /signage/
 
-- title: Showcase
+- title: Latest
   url: /showcase/
+
+- title: FAQ
+  url: /faq/
+
+# - title: 'P: 08 8240 0925'
+#   url: 'tel:0882400925'
 
 - title: Contact
   url: "#contact"

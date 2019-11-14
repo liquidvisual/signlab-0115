@@ -25,7 +25,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
 
     <!-- Google Fonts CDN -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&display=swap">
 
     <!-- build:css({src,.tmp}) /assets/css/minified.css -->
     <link rel="stylesheet" href="/_bower_components/animate.css/animate.min.css">
@@ -55,6 +55,12 @@
                         </div>
                     </div>
                 </nav> <!-- .navigation -->
+
+                <!-- Phone -->
+                <a class="btn-phone" href="tel:{{ settings.phone }}">
+                    <i class="fa fa-phone"></i>
+                    <span class="text">{{ settings.phone }}<span>
+                </a>
 
             </header> <!-- .header -->
 

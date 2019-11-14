@@ -87,7 +87,7 @@ $include-html-global-classes: $include-html-classes !default;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;// !default;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -159,8 +159,8 @@ $global-radius: 5px !default;
 
 $small-range: (0em, 40em) !default;   // 0-640
 $medium-range: (40.063em, 63.938em) !default; // 641-1023
-$large-range: (64em, 64.375em) !default;  // 1024 - 1030
-$xlarge-range: (64.063em, 73.125em) !default; // 1031-1170
+$large-range: (64em, 66.19em) !default;  // 1024 - 1059
+$xlarge-range: (66.25em, 73.125em) !default; // 1060-1170
 $xxlarge-range: (73.188em) !default; // 1171+
 
 // $small-range: (0em, 40em);   // 0-640

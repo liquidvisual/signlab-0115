@@ -2,10 +2,12 @@
 	<div class="row outer-row">
 		<div class="columns">
 
-			<div class="headline">
-				<h2>{{ include.title }}</h2>
-				<h3 class="subheader">{{ include.subheader }}</h3>
-			</div>
+			{% if include.title %}
+				<div class="headline">
+					<h2>{{ include.title }}</h2>
+					<h3 class="subheader">{{ include.subheader }}</h3>
+				</div>
+			{% endif %}
 
 			{{ include.body }}
 

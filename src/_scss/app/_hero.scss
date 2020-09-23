@@ -1,8 +1,7 @@
 /*
     HERO.CSS
 
-    - Last updated: 12.02.15
-    - hello@liquidvisual.com
+    - Last updated: 23.09.20, 12.02.15
 */
 //-----------------------------------------------------------------
 // Variables
@@ -13,15 +12,11 @@
 
 .lv-hero-module {
 	&.is-fullscreen {
-		height: -moz-calc(100vh - #{$header-height-small});
-		height: -webkit-calc(100vh - #{$header-height-small});
 	    height: calc(100vh - #{$header-height-small});
 	    // min-height: calc(100vh - #{$header-height-small});
 
 	    @media #{$medium-up} {
 	    	height: 668px; // Fallback for iPad io6
-	    	height: -moz-calc(100vh - #{$header-height-medium});
-	    	height: -webkit-calc(100vh - #{$header-height-medium});
 	    	height: calc(100vh - #{$header-height-medium});
 	        // min-height: calc(100vh - #{$header-height-medium});
 	    }
@@ -42,23 +37,13 @@
 // Hero
 //-----------------------------------------------------------------
 
-.lv-hero-module {
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.5);
-	}
-	.lv-hero {
-		position: relative; // will this break?
-	}
+.lv-hero-module .lv-hero {
+	position: relative;
 }
 
 .lv-hero-caption {
 	text-transform: uppercase;
-	z-index: 1;
+	z-index: 2;
 }
 
 //-----------------------------------------------------------------
@@ -95,11 +80,13 @@
 	}
 
 	.lv-hero-caption {
+		position: relative;
 		padding: rem-calc(30 0);
 		margin: 0;
 		width: 100%;
 		text-align: center;
 		background: $primary-color;
+		z-index: 1;
 
 		h1, p {
 			word-wrap: break-word;

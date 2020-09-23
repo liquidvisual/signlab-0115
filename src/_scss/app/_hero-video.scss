@@ -1,0 +1,208 @@
+/*
+    HERO.CSS
+
+    - Last updated: 23.09.20
+*/
+//-----------------------------------------------------------------
+// VARS
+//-----------------------------------------------------------------
+//-----------------------------------------------------------------
+// TINT OVERLAY
+//-----------------------------------------------------------------
+
+.lv-hero-module .tint-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+//-----------------------------------------------------------------
+// HERO - YOUTUBE VIDEO
+// https://stackoverflow.com/questions/24579785/force-iframe-youtube-video-to-center-fit-and-full-cover-the-screen-in-the-backgr?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+//-----------------------------------------------------------------
+
+.lv-hero-module .lv-hero {
+	// top: -2px;
+}
+
+.lv-hero .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(white, 0.9);
+    // border: 2px dashed red;
+    overflow: hidden; // *new*
+    // border-bottom: 1px solid white;
+    // z-index: -1;
+}
+
+.lv-hero .video-fg,
+.lv-hero .video-bg iframe,
+.lv-hero .video-bg video {
+    position: absolute;
+    // top: 0;
+    // left: calc(50vw - 1920px/2);
+    // width: 1920px;
+    // height: 1080px;
+    pointer-events: none;
+    border: 1px dashed transparent; // IE EDGE HACK
+
+    @media #{$medium-up} {
+        top: 0;
+        left: 30%;
+        width: calc(1920px/1.5);
+        height: calc(1080px/1.5);
+    }
+
+    @media #{$large-up} {
+        top: 33.666%;
+        left: calc(50vw - (1920px/1.2)/2);
+        width: calc(1920px/1.2);
+        height: calc(1080px/1.2);
+    }
+
+    @media #{$xlarge-up} {
+        top: 33.666%;
+        left: calc(50vw - 1920px/2 - 5px); // fixes weird bug
+        width: 1920px;
+        height: 1080px;
+    }
+}
+
+//=============================================
+// HTML5 VIDEO
+//=============================================
+
+.lv-hero .video-bg video {
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-44%);
+
+    box-shadow: 100px 0 0px 1000px white;
+
+    @media #{$small-up} {
+        transform: translateX(-50%) translateY(-40%);
+    }
+
+    @media #{$medium-up} {
+        transform: translateX(-50%) translateY(-36%);
+    }
+
+    @media #{$large-up} {
+        left: calc(50vw - 1920px/2 - 2px); // 2px fixes weird bug
+        min-width: 1920px;
+        min-height: 1080px;
+        transform: translateX(0) translateY(-48%);
+    }
+
+    @media (min-width: 1921px) {
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translateX(-50%) translateY(-38%);
+    }
+}
+
+//=============================================
+// DELAY TRANSITION
+//=============================================
+
+.lv-hero .video-bg iframe,
+.lv-hero .video-bg video {
+    opacity: 0;
+    animation: delayShow 2s ease 300ms alternate 1 forwards;
+
+    @keyframes delayShow {
+        0%   { opacity: 0;  }
+        100% { opacity: 1;  }
+    }
+}
+
+//=============================================
+// SIZE PRESETS
+//=============================================
+
+// DEFAULT HERO
+.lv-hero:not(.is-full) .video-fg {
+    @media #{$medium-up} {
+        display: block;
+        left: -100%;
+        width: 300%;
+    }
+    @media #{$large-up} {
+        top: -103%;
+        left: 0;
+        width: 106%;
+        height: 306%;
+    }
+}
+
+// FULSCREEN PRESET
+.lv-hero.is-full .video-fg {
+    @media (min-aspect-ratio: 16/9) {
+        height: 300%;
+        top: -100%;
+    }
+    @media (max-aspect-ratio: 16/9) {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+// MEDIUM PRESET - Good, not great
+.lv-hero.is-medium .video-fg {
+    @media #{$medium-only} {
+        top: -106%;
+        left: 0;
+        width: 103%;
+        height: 303%;
+    }
+}
+
+// Notes: 16:9 is 1024x576, 720p is 1280x720, HD is 1920x1080
+
+// video::-webkit-media-controls {
+//     display: none !important; // for video element
+// }
+
+//-----------------------------------------------------------------
+// HERO - SCROLL PROMPT
+//-----------------------------------------------------------------
+
+.lv-hero-scroll-prompt {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    left: calc(50% - 20px);
+    bottom: rem-calc(100);
+    width: rem-calc(40);
+    height: rem-calc(40);
+    border-radius: 100%;
+    background: rgba(white, 0.3);
+    font-size: rem-calc(30);
+    text-align: center;
+    color: black;
+    transition: background-color ease 300ms;
+    animation: pulsate 0.8s ease-out 0.3s alternate infinite;
+    z-index: 1;
+
+    &:hover {
+        color: black;
+        background: rgba(white, 0.25);
+    }
+
+    @keyframes pulsate {
+        0% { transform: translateY(0);}
+        100% { transform: translateY(10px);}
+    }
+}

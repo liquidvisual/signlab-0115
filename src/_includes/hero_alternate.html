@@ -3,13 +3,21 @@
 <!-- HERO MODULE -->
 <div class="lv-hero-module promo-style">
 
-    <!-- For Mobile Only -->
+    <!-- MOBILE ONLY -->
     <img class="hide-for-xlarge-up" src="{{ hero_image }}">
 
-    <!-- Hero Item -->
-    <div class="lv-hero" style="background-image: url('{{ hero_image | prepend: site.assets }}')" data-background-image="{{ hero_image | prepend: site.assets }}">
+    <!-- HERO ITEM -->
+    <div
+        class="lv-hero"
+        style="background-image: url('{{ hero_image | prepend: site.assets }}')"
+        data-background-image="{{ hero_image | prepend: site.assets }}"
+    >
+        <!-- VIDEO -->
+        {% if page.hero_video %}
+            {% include hero/hero__html5_video_plugin.html %}
+        {% endif %}
 
-        <div class="lv-hero-caption animated"> <!-- Leave here -->
+        <div class="lv-hero-caption animated">
 
             <div class="lv-vertical-center">
                 <h1>3-Dimensional<br> Signage</h1>

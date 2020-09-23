@@ -1,18 +1,28 @@
-{% assign hero = "/img/content/banner-1.jpg" %}
+{% assign hero = "/img/content/video/video-1.jpg" %}
 
 <!-- HERO MODULE -->
 <div class="lv-hero-module is-fullscreen default-style">
 
-    <!-- Hero Item -->
-    <div class="lv-hero" style="background-image: url('{{ hero | prepend: site.assets }}')" data-background-image="{{ hero | prepend: site.assets }}">
-        <div class="overlay hide-for-xlarge-up"></div>
+    <!-- HERO -->
+    <div
+        class="lv-hero"
+        style="background-image: url('{{ hero | prepend: site.assets }}')"
+        data-background-image="{{ hero | prepend: site.assets }}"
+    >
+        <!-- VIDEO -->
+        {% if page.hero_video %}
+            {% include hero/hero__html5_video_plugin.html %}
+        {% endif %}
+
+        <!-- OVERLAY TINT -->
+        <div class="tint-overlay "></div>
 
         <div class="row row-outer lv-vertical-center text-center">
             <div class="columns">
 
-                <div class="lv-hero-caption animated text-center"> <!-- Leave here -->
+                <div class="lv-hero-caption animated text-center">
 
-                    <h1>We Make Signs for Adelaide</h1>
+                    <h1>Signs | Banners | Wraps</h1>
 
                     <div class="lv-hero-caption-body">
                         <p><a class="button radius" href="#about-us">About Us</a>
@@ -20,9 +30,16 @@
                     </div>
 
                 </div> <!-- .lv-hero-caption -->
+
             </div> <!-- .columns -->
-
         </div> <!-- .row -->
-    </div> <!-- .lv-hero -->
 
+        {% comment %}
+        {% if page.hero_scroll_prompt %}
+            <!-- SCROLL PROMPT -->
+            <a class="lv-hero-scroll-prompt hidden-lg-down"><i class="fa fa-angle-down"></i></a>
+        {% endif %}
+        {% endcomment %}
+
+    </div> <!-- .lv-hero -->
 </div> <!-- .lv-hero-module -->

@@ -124,14 +124,44 @@
 <!-- HERO -->
 <!-- HERO MODULE --><div class="lv-hero-module promo-style">
 
-                <!-- For Mobile Only -->
+                <!-- MOBILE ONLY -->
                 <img class=hide-for-xlarge-up src=/assets/img/content/banner-2.jpg>
 
-                <!-- Hero Item -->
+                <!-- HERO ITEM -->
                 <div class=lv-hero style="background-image: url('/assets/img/content/banner-2.jpg')" data-background-image=/assets/img/content/banner-2.jpg>
-                    <div class="lv-hero-caption animated">
 
-                        <!-- Leave here -->
+                    <!-- VIDEO -->
+                    
+<!-- HTML5 VIDEO PLUGIN - video should be 16:9 (1920x1080) --><div class="video-bg hide-for-small-down">
+                        <div class=video-fg>
+
+                            <!-- HTML5 VIDEO -->
+                            <video autoplay="" loop="" muted hidden poster="">
+                                <source src=src data-src=/assets/img/content/video/video-1.webm type=video/webm></source>
+                                <source src=src data-src=/assets/img/content/video/video-1.mp4 type=video/mp4></source>
+                            </video>
+                        </div>
+                    </div>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        try {
+                            var videoBG = document.querySelectorAll('.video-bg video');
+                            // update sources dynamically
+                            videoBG.forEach(function(item) {
+                                item.querySelectorAll('video > source[data-src]').forEach(function(item) {
+                                    item.src = item.dataset.src;
+                                });
+                                item.onloadeddata = function() {
+                                    item.hidden = false;
+                                };
+                                item.load(); // for Chrome
+                            });
+                        } catch (err) {
+                            console.warn('Eek! Video error.')
+                        }
+                    });
+                    </script>
+                    <div class="lv-hero-caption animated">
                         <div class=lv-vertical-center>
                             <h1>3-Dimensional
                                 <br>Signage</h1>
